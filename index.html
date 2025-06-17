@@ -2,560 +2,199 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hábitos Saludables</title>
- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hábitos Saludables 2.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #c1dff0, #f0f7fa);
-  color: #333;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  line-height: 1.6;
-}
-
-.container {
-  background-color: white;
-  width: 60%;
-  margin: 50px auto;
-  padding: 20px 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-h1, h2, h3 {
-  color: #176b87;
-  margin-bottom: 15px;
-}
-
-ul {
-  list-style-type: square;
-  text-align: left;
-  display: inline-block;
-  font-size: 18px;
-  margin-bottom: 25px;
-}
-
-.image-container img,
-img {
-  border-radius: 12px;
-  margin: 20px 0;
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-table {
-  border-collapse: collapse;
-  width: 90%;
-  margin: 20px auto 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-th, td {
-  border: 1px solid #a9cbd1;
-  padding: 12px 15px;
-  text-align: center;
-}
-
-th {
-  background-color: #b3d6e8;
-  color: #06425c;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f0f8ff;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #666;
-}
-
-iframe {
-  margin: 20px auto 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  max-width: 90%;
-  height: 315px;
-  display: block;
-}
-
-/* ===== Chatbot styles ===== */
-#chatbot-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #176b87;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-#chatbot {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 320px;
-  max-height: 400px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 1000;
-}
-#chatbot-header {
-  background-color: #176b87;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-}
-#chatbot-messages {
-  flex-grow: 1;
-  padding: 10px;
-  overflow-y: auto;
-  font-size: 14px;
-  text-align: left;
-}
-#chatbot-input-container {
-  display: flex;
-}
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #c1dff0, #f0f7fa);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #fff;
+      width: 80%;
+      margin: 50px auto;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #176b87;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .image-container img, img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #b3d6e8;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      font-size: 14px;
+    }
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #176b87;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    #chatbot {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    #chatbot-header {
+      background-color: #176b87;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    #chatbot-messages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    #chatbot-input-container {
+      display: flex;
+    }
+    #chatbot-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+    #chatbot-send {
+      padding: 10px;
+      border: none;
+      background-color: #176b87;
+      color: white;
+      cursor: pointer;
+    }
+    #upload-form {
+      margin-top: 20px;
+    }
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Hoja de Presentación</h1>
-    <ul>
-      <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
-      <li><strong>Capacitación:</strong> Informática</li>
-      <li><strong>Módulo:</strong> Programación Web</li>
-      <li><strong>Grupo:</strong> 401</li>
-      <li><strong>Plantel:</strong> Cobaev 46 </li>
-    </ul>
+    <h1>Hábitos Saludables 2.0</h1>
+    <h2>Bienvenido a tu guía interactiva de salud</h2>
+    <p>En esta plataforma podrás aprender, interactuar y compartir tus platillos favoritos saludables.</p>
+
+    <h3>🎵 Música Relajante</h3>
+    <audio controls loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mp3">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <h3>📸 Comparte tus platillos saludables</h3>
+    <form id="upload-form">
+      <input type="file" accept="image/*" id="imageInput">
+      <button type="button" onclick="uploadImage()">Subir Foto</button>
+    </form>
+    <div id="gallery"></div>
   </div>
 
-  <main>
-    <section id="alimentacion">
-      <h2>🥗 Alimentación Equilibrada</h2>
-      <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
-      <img src="1509480.png" width="350" height="300" alt="Alimentación saludable" />
-
-      <!-- Tabla de hábitos saludables -->
-      <h3>Hábitos Relacionados con la Alimentación</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
-        <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
-        <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
-      </table>
-
-      <!-- Comparativa de bebidas -->
-      <h3>Comparativa de Bebidas Saludables</h3>
-      <table>
-        <tr><th>Bebida</th><th>Calorías (100ml)</th><th>Azúcar</th><th>Recomendación</th></tr>
-        <tr><td>Agua</td><td>0</td><td>0g</td><td>Excelente</td></tr>
-        <tr><td>Jugo natural</td><td>45</td><td>9g</td><td>Moderado</td></tr>
-        <tr><td>Refresco</td><td>42</td><td>10g</td><td>Evitar</td></tr>
-        <tr><td>Té sin azúcar</td><td>1</td><td>0g</td><td>Recomendado</td></tr>
-      </table>
-    </section>
-
-    <section id="ejercicio">
-      <h2>🏃 Ejercicio Físico</h2>
-      <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
-      <img src="2159472.png" width="350" height="300" alt="Ejercicio físico" />
-
-      <!-- Tabla de hábitos relacionados -->
-      <h3>Hábitos de Ejercicio</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>2</td><td>Ejercicio</td><td>Actividad física</td><td>30 min diarios</td><td>Corazón sano</td><td>Obesidad</td><td>Desde la niñez</td></tr>
-      </table>
-
-      <!-- Tabla de ejercicios por edad -->
-      <h3>Ejercicios Recomendados por Edad</h3>
-      <table>
-        <tr><th>Edad</th><th>Ejercicios</th><th>Duración</th></tr>
-        <tr><td>Infancia</td><td>Juegos activos</td><td>60 min diarios</td></tr>
-        <tr><td>Adolescencia</td><td>Natación, fútbol</td><td>60 min diarios</td></tr>
-        <tr><td>Adultos</td><td>Caminatas, yoga</td><td>30-45 min</td></tr>
-        <tr><td>Adultos mayores</td><td>Tai chi, paseos</td><td>30 min</td></tr>
-      </table>
-    </section>
-
-    <section id="descanso">
-      <h2>😴 Descanso y Sueño</h2>
-      <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
-      <img src="giphy.gif" width="350" height="300" alt="Descanso y sueño" />
-
-      <!-- Tabla relacionada -->
-      <h3>Hábitos de Descanso</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>4</td><td>Dormir bien</td><td>7-9 hrs de sueño</td><td>Noches</td><td>Concentración</td><td>Insomnio</td><td>Todas</td></tr>
-      </table>
-    </section>
-
-    <section id="hidratacion">
-      <h2>💧 Hidratación</h2>
-      <p>El agua es esencial para la digestión, la circulación y el funcionamiento del cerebro.</p>
-    </section>
-
-    <section id="bienestar">
-      <h2>🧘 Bienestar Mental</h2>
-      <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
-      <img src="psicologia-del-color-optimized.png" width="350" height="300" alt="Bienestar mental" />
-
-      <h3>Hábitos para el Bienestar Mental</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>5</td><td>Evitar estrés</td><td>Manejar emociones</td><td>Diario</td><td>Bienestar emocional</td><td>Ansiedad</td><td>+12 años</td></tr>
-      </table>
-    </section>
-
-    <section id="frutasverduras">
-      <h2>🍏 Frutas y Verduras de Temporada</h2>
-      <p>Consumir productos de temporada es más económico, sostenible y nutritivo.</p>
-
-      <!-- Tabla de calorías -->
-      <h3>Calorías en más frutas por 100 gramos</h3>
-      <table>
-        <tr><th>Fruta</th><th>Calorías (kcal)</th></tr>
-        <tr><td>Manzana</td><td>52</td></tr>
-        <tr><td>Banana</td><td>89</td></tr>
-        <tr><td>Naranja</td><td>43</td></tr>
-        <tr><td>Fresas</td><td>32</td></tr>
-        <tr><td>Uvas</td><td>69</td></tr>
-        <tr><td>Sandía</td><td>30</td></tr>
-        <tr><td>Piña</td><td>50</td></tr>
-        <tr><td>Mango</td><td>60</td></tr>
-      </table>
-
-      <!-- Aporte nutricional -->
-      <h3>Aporte Nutricional de Algunas Frutas</h3>
-      <table>
-        <tr><th>Fruta</th><th>Vitamina</th><th>Minerales</th><th>Beneficios</th></tr>
-        <tr><td>Naranja</td><td>Vitamina C</td><td>Potasio</td><td>Refuerza defensas</td></tr>
-        <tr><td>Plátano</td><td>B6</td><td>Magnesio</td><td>Energía</td></tr>
-        <tr><td>Fresa</td><td>C</td><td>Manganeso</td><td>Antioxidante</td></tr>
-        <tr><td>Manzana</td><td>A</td><td>Fósforo</td><td>Digestión</td></tr>
-      </table>
-    </section>
-
-    <section id="recursos">
-      <h2>📚 Recursos Adicionales</h2>
-      <ul>
-        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
-        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
-      </ul>
-      <h3>Videos recomendados:</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" title="Alimentación saludable" frameborder="0" allowfullscreen></iframe>
-    </section>
-  </main>
-
-  <footer>
-    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
-  </footer>
-
-  <!-- Chatbot toggle button -->
-  <button id="chatbot-toggle" aria-label="Abrir chat">💬</button>
-
-  <!-- Chatbot container -->
-  <div id="chatbot" role="region" aria-label="Chatbot de ayuda">
-    <div id="chatbot-header">Chatbot Hábitos Saludables</div>
+  <button id="chatbot-toggle">💬</button>
+  <div id="chatbot">
+    <div id="chatbot-header">Chatbot Saludable</div>
     <div id="chatbot-messages"></div>
     <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta..." aria-label="Mensaje de chat" />
-      <button id="chatbot-send" aria-label="Enviar mensaje">Enviar</button>
+      <input type="text" id="chatbot-input" placeholder="¿Cómo te puedo ayudar?">
+      <button id="chatbot-send">Enviar</button>
     </div>
   </div>
 
+  <footer>
+    <p>&copy; 2025 Danna Karen Bravo Sánchez y Fanny Borbonio Cano. Proyecto Web.</p>
+  </footer>
+
   <script>
-    const toggleBtn = document.getElementById('chatbot-toggle');
-const chatbot = document.getElementById('chatbot');
-const sendBtn = document.getElementById('chatbot-send');
-const input = document.getElementById('chatbot-input');
-const messages = document.getElementById('chatbot-messages');
+    // Chatbot básico
+    document.getElementById('chatbot-toggle').onclick = () => {
+      const bot = document.getElementById('chatbot');
+      bot.style.display = bot.style.display === 'flex' ? 'none' : 'flex';
+    };
 
-toggleBtn.addEventListener('click', () => {
-  if (chatbot.style.display === 'flex') {
-    chatbot.style.display = 'none';
-  } else {
-    chatbot.style.display = 'flex';
-    input.focus();
-  }
-});
+    document.getElementById('chatbot-send').onclick = () => {
+      const input = document.getElementById('chatbot-input');
+      const messages = document.getElementById('chatbot-messages');
+      const msg = document.createElement('div');
+      msg.textContent = '👤: ' + input.value;
+      messages.appendChild(msg);
 
-// Función para normalizar texto: quitar tildes y pasar a minúsculas
-function normalize(text) {
-  const from = "ÁÉÍÓÚáéíóúÑñ";
-  const to = "AEIOUaeiounn";
-  return text
-    .toLowerCase()
-    .split("")
-    .map((c) => (from.indexOf(c) !== -1 ? to[from.indexOf(c)] : c))
-    .join("");
-}
+      const reply = document.createElement('div');
+      reply.textContent = '🤖: ¡Gracias por tu mensaje! Estoy aquí para ayudarte con hábitos saludables.';
+      messages.appendChild(reply);
+      input.value = '';
+    };
 
-// Base simple de preguntas y respuestas
-const qaPairs = [
-  {
-    questions: [
-      "como puedo mejorar mi alimentacion",
-      "que debo comer para estar sano",
-      "que alimentos son buenos para mi",
-      "como mejoro mi alimentacion",
-      "que debo comer para estar sano",
-    ],
-    answer:
-      "¡Hola! Para mejorar tu alimentación, te recomiendo incluir más frutas, verduras y cereales integrales en tu dieta. También bebe suficiente agua y evita alimentos procesados o con mucho azúcar. ¿Quieres que te sugiera recetas saludables?",
-  },
-  {
-    questions: [
-      "cuanto ejercicio debo hacer",
-      "que tipo de ejercicio es mejor",
-      "cuanto tiempo debo entrenar cada dia",
-      "cuanto ejercicio hago",
-      "que tipo de ejercicios son buenos",
-    ],
-    answer:
-      "Lo ideal es hacer al menos 30 minutos de ejercicio moderado todos los días, como caminar, nadar o hacer yoga. Esto ayuda a mantener tu corazón sano y tu cuerpo activo. ¿Quieres que te recomiende ejercicios según tu edad?",
-  },
-  {
-    questions: [
-      "cuantas horas debo dormir",
-      "por que es importante dormir bien",
-      "cuantas horas duermo",
-      "porque es importante dormir",
-    ],
-    answer:
-      "Dormir entre 7 y 8 horas cada noche es clave para que tu cuerpo y mente se recuperen. Dormir bien mejora la concentración, el ánimo y la salud en general. ¿Quieres consejos para dormir mejor?",
-  },
-  {
-    questions: [
-      "como manejo el estres",
-      "que hago si estoy muy estresado",
-      "que hago si tengo mucho estres",
-    ],
-    answer:
-      "Para manejar el estrés, es bueno dedicar tiempo a actividades relajantes como meditar, escuchar música o caminar al aire libre. También hablar con alguien de confianza ayuda mucho. ¿Quieres que te enseñe técnicas fáciles para relajarte?",
-  },
-  {
-    questions: [
-      "por que es importante beber agua",
-      "cuanta agua debo tomar",
-      "agua es importante",
-      "cuanta agua debo beber",
-    ],
-    answer:
-      "El agua es vital para que tu cuerpo funcione bien: ayuda a la digestión, la circulación y el cerebro. Se recomienda beber al menos 2 litros al día, pero puede variar según tu actividad. ¿Quieres ideas para tomar más agua cada día?",
-  },
-];
+    // Subir imagen simulada
+    function uploadImage() {
+      const input = document.getElementById('imageInput');
+      const gallery = document.getElementById('gallery');
+      const file = input.files[0];
+      if (!file) return;
 
-// Función para buscar respuesta
-function getAnswer(userInput) {
-  const normalizedInput = normalize(userInput);
-  for (const pair of qaPairs) {
-    for (const q of pair.questions) {
-      if (normalizedInput.includes(q)) {
-        return pair.answer;
-      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        const img = document.createElement('img');
+        img.src = reader.result;
+        img.alt = 'Platillo subido';
+        img.style.maxWidth = '100%';
+        gallery.appendChild(img);
+      };
+      reader.readAsDataURL(file);
     }
-  }
-  return "Lo siento, no entendí tu pregunta. ¿Podrías reformularla? 😊";
-}
-
-function addMessage(text, sender = "bot") {
-  const msgDiv = document.createElement("div");
-  msgDiv.textContent = text;
-  msgDiv.style.marginBottom = "10px";
-  msgDiv.style.padding = "6px 10px";
-  msgDiv.style.borderRadius = "10px";
-  msgDiv.style.maxWidth = "80%";
-  if (sender === "user") {
-    msgDiv.style.backgroundColor = "#2e8b57";
-    msgDiv.style.color = "white";
-    msgDiv.style.marginLeft = "auto";
-  } else {
-    msgDiv.style.backgroundColor = "#e0f2f1";
-    msgDiv.style.color = "#004d40";
-    msgDiv.style.marginRight = "auto";
-  }
-  messages.appendChild(msgDiv);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-function sendMessage() {
-  const text = input.value.trim();
-  if (text === "") return;
-  addMessage(text, "user");
-  input.value = "";
-  setTimeout(() => {
-    const response = getAnswer(text);
-    addMessage(response, "bot");
-  }, 500);
-}
-
-sendBtn.addEventListener("click", sendMessage);
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});const toggleBtn = document.getElementById('chatbot-toggle');
-const chatbot = document.getElementById('chatbot');
-const sendBtn = document.getElementById('chatbot-send');
-const input = document.getElementById('chatbot-input');
-const messages = document.getElementById('chatbot-messages');
-
-toggleBtn.addEventListener('click', () => {
-  if (chatbot.style.display === 'flex') {
-    chatbot.style.display = 'none';
-  } else {
-    chatbot.style.display = 'flex';
-    input.focus();
-  }
-});
-
-// Función para normalizar texto: quitar tildes y pasar a minúsculas
-function normalize(text) {
-  const from = "ÁÉÍÓÚáéíóúÑñ";
-  const to = "AEIOUaeiounn";
-  return text
-    .toLowerCase()
-    .split("")
-    .map((c) => (from.indexOf(c) !== -1 ? to[from.indexOf(c)] : c))
-    .join("");
-}
-
-// Base simple de preguntas y respuestas
-const qaPairs = [
-  {
-    questions: [
-      "como puedo mejorar mi alimentacion",
-      "que debo comer para estar sano",
-      "que alimentos son buenos para mi",
-      "como mejoro mi alimentacion",
-      "que debo comer para estar sano",
-    ],
-    answer:
-      "¡Hola! Para mejorar tu alimentación, te recomiendo incluir más frutas, verduras y cereales integrales en tu dieta. También bebe suficiente agua y evita alimentos procesados o con mucho azúcar. ¿Quieres que te sugiera recetas saludables?",
-  },
-  {
-    questions: [
-      "cuanto ejercicio debo hacer",
-      "que tipo de ejercicio es mejor",
-      "cuanto tiempo debo entrenar cada dia",
-      "cuanto ejercicio hago",
-      "que tipo de ejercicios son buenos",
-    ],
-    answer:
-      "Lo ideal es hacer al menos 30 minutos de ejercicio moderado todos los días, como caminar, nadar o hacer yoga. Esto ayuda a mantener tu corazón sano y tu cuerpo activo. ¿Quieres que te recomiende ejercicios según tu edad?",
-  },
-  {
-    questions: [
-      "cuantas horas debo dormir",
-      "por que es importante dormir bien",
-      "cuantas horas duermo",
-      "porque es importante dormir",
-    ],
-    answer:
-      "Dormir entre 7 y 8 horas cada noche es clave para que tu cuerpo y mente se recuperen. Dormir bien mejora la concentración, el ánimo y la salud en general. ¿Quieres consejos para dormir mejor?",
-  },
-  {
-    questions: [
-      "como manejo el estres",
-      "que hago si estoy muy estresado",
-      "que hago si tengo mucho estres",
-    ],
-    answer:
-      "Para manejar el estrés, es bueno dedicar tiempo a actividades relajantes como meditar, escuchar música o caminar al aire libre. También hablar con alguien de confianza ayuda mucho. ¿Quieres que te enseñe técnicas fáciles para relajarte?",
-  },
-  {
-    questions: [
-      "por que es importante beber agua",
-      "cuanta agua debo tomar",
-      "agua es importante",
-      "cuanta agua debo beber",
-    ],
-    answer:
-      "El agua es vital para que tu cuerpo funcione bien: ayuda a la digestión, la circulación y el cerebro. Se recomienda beber al menos 2 litros al día, pero puede variar según tu actividad. ¿Quieres ideas para tomar más agua cada día?",
-  },
-];
-
-// Función para buscar respuesta
-function getAnswer(userInput) {
-  const normalizedInput = normalize(userInput);
-  for (const pair of qaPairs) {
-    for (const q of pair.questions) {
-      if (normalizedInput.includes(q)) {
-        return pair.answer;
-      }
-    }
-  }
-  return "Lo siento, no entendí tu pregunta. ¿Podrías reformularla? 😊";
-}
-
-function addMessage(text, sender = "bot") {
-  const msgDiv = document.createElement("div");
-  msgDiv.textContent = text;
-  msgDiv.style.marginBottom = "10px";
-  msgDiv.style.padding = "6px 10px";
-  msgDiv.style.borderRadius = "10px";
-  msgDiv.style.maxWidth = "80%";
-  if (sender === "user") {
-    msgDiv.style.backgroundColor = "#2e8b57";
-    msgDiv.style.color = "white";
-    msgDiv.style.marginLeft = "auto";
-  } else {
-    msgDiv.style.backgroundColor = "#e0f2f1";
-    msgDiv.style.color = "#004d40";
-    msgDiv.style.marginRight = "auto";
-  }
-  messages.appendChild(msgDiv);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-function sendMessage() {
-  const text = input.value.trim();
-  if (text === "") return;
-  addMessage(text, "user");
-  input.value = "";
-  setTimeout(() => {
-    const response = getAnswer(text);
-    addMessage(response, "bot");
-  }, 500);
-}
-
-sendBtn.addEventListener("click", sendMessage);
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});
   </script>
 </body>
 </html>
