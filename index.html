@@ -4,34 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vida Saludable</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
   <style>
+    /* Base */
     body {
       font-family: 'Dancing Script', cursive;
       background-color: #e0f7f4;
       color: #2e4d4f;
       margin: 0;
       padding: 0;
+      line-height: 1.5;
     }
 
     h1, h2, h3 {
       color: #3fa796;
       text-align: center;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     p {
       font-size: 1.2em;
       color: #4d7c8a;
-      margin: 10px 20px;
+      margin: 10px 20px 20px;
     }
 
     a {
       color: #7bb6d9;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       text-decoration: underline;
+      color: #5299d3;
+      outline: none;
     }
 
     button {
@@ -43,259 +52,64 @@
       font-size: 1em;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-family: inherit;
     }
 
-    button:hover {
+    button:hover,
+    button:focus {
       background-color: #8fd4a6;
+      outline: none;
     }
 
+    /* Container */
     .container {
       max-width: 800px;
       margin: 40px auto;
       background-color: #f1fcfb;
-      padding: 20px;
+      padding: 20px 25px;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 128, 128, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 128, 128, 0.12);
     }
 
+    /* Header and footer */
     header, footer {
       background-color: #a7e9af;
       text-align: center;
-      padding: 20px;
+      padding: 20px 15px;
+      box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
     }
 
+    footer {
+      font-size: 0.9em;
+      color: #1f3d3f;
+      user-select: none;
+    }
+
+    /* Nav */
     nav {
       text-align: center;
-      padding: 10px;
+      padding: 12px 10px;
       background-color: #d3f8e2;
+      box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.7);
     }
 
     nav a {
       margin: 0 15px;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
     }
 
-    .chatbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      background-color: #f1fcfb;
-      border: 2px solid #a7e9af;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      z-index: 1000;
+    nav a:focus-visible {
+      outline: 3px solid #3fa796;
+      outline-offset: 3px;
     }
 
-    .chat-header {
-      background-color: #8fd4a6;
-      color: #2e4d4f;
-      padding: 10px;
-      font-weight: bold;
-      border-radius: 12px 12px 0 0;
-      text-align: center;
+    /* Sections */
+    section {
+      margin-bottom: 40px;
     }
 
-    .chat-body {
-      padding: 10px;
-      height: 200px;
-      overflow-y: auto;
-    }
+    /* Multimedia */
 
-    .chat-input {
-      display: flex;
-      border-top: 1px solid #ccc;
-    }
-
-    .chat-input input {
-      flex: 1;
-      border: none;
-      padding: 10px;
-      border-radius: 0 0 0 12px;
-    }
-
-    .chat-input button {
-      background-color: #a7e9af;
-      border: none;
-      padding: 10px;
-      border-radius: 0 0 12px 0;
-      cursor: pointer;
-    }
-
-    .message {
-      margin: 5px 0;
-    }
-
-    .user {
-      font-weight: bold;
-    }
-
-    .bot {
-      font-style: italic;
-    }
-
-    .carousel {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
-      margin: 20px 0;
-    }
-
-    .carousel-track {
-      display: flex;
-      animation: scroll 12s linear infinite;
-    }
-
-    .carousel-track img {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 10px;
-      border-radius: 12px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    #user-gallery img {
-      width: 100px;
-      border-radius: 10px;
-      margin: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Vida Saludable</h1>
-    <p>Consejos para tu bienestar físico y mental</p>
-  </header>
-
-  <nav>
-    <a href="#alimentacion">Alimentación</a>
-    <a href="#ejercicio">Ejercicio</a>
-    <a href="#bienestar">Bienestar</a>
-    <a href="#multimedia">Multimedia</a>
-  </nav>
-
-  <div class="container">
-    <section id="alimentacion">
-      <h2>Alimentación Saludable</h2>
-      <p>Una dieta balanceada incluye frutas, verduras, proteínas magras y mucha agua. Evita el exceso de azúcares y grasas procesadas para mantener tu energía estable.</p>
-    </section>
-
-    <section id="ejercicio">
-      <h2>Ejercicio Regular</h2>
-      <p>Hacer ejercicio al menos 30 minutos al día ayuda a tu corazón, músculos y estado de ánimo. Caminar, nadar o hacer yoga son excelentes opciones.</p>
-    </section>
-
-    <section id="bienestar">
-      <h2>Bienestar Mental</h2>
-      <p>Medita, duerme bien y dedica tiempo a actividades que disfrutes. Tu salud mental es tan importante como la física.</p>
-    </section>
-
-    <section id="multimedia">
-      <h2>Multimedia Saludable</h2>
-
-      <h3>Carrusel de Imágenes</h3>
-      <div class="carousel">
-        <div class="carousel-track">
-          <img src="https://via.placeholder.com/300x150?text=Comida+Saludable" />
-          <img src="https://via.placeholder.com/300x150?text=Ejercicio+al+Aire+Libre" />
-          <img src="https://via.placeholder.com/300x150?text=Bienestar+Mental" />
-          <img src="https://via.placeholder.com/300x150?text=Vida+Activa" />
-        </div>
-      </div>
-
-      <h3>Sube tu imagen saludable</h3>
-      <input type="file" accept="image/*" onchange="previewImage(event)" />
-      <div id="user-gallery"></div>
-
-      <h3>Video Educativo</h3>
-      <div style="text-align: center;">
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/s1u7MdrERmU" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
-      </div>
-
-      <h3>Música Relajante</h3>
-      <div style="text-align: center;">
-        <audio autoplay loop controls>
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Vida Saludable. Todos los derechos reservados.
-  </footer>
-
-  <div class="chatbot">
-    <div class="chat-header">Asistente Saludable</div>
-    <div class="chat-body" id="chat-body">
-      <div class="message bot">¡Hola! ¿En qué puedo ayudarte hoy?</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Escribe tu pregunta..." />
-      <button onclick="sendMessage()">Enviar</button>
-    </div>
-  </div>
-
-  <script>
-    function sendMessage() {
-      const input = document.getElementById("user-input");
-      const message = input.value.trim();
-      if (message === "") return;
-
-      const chatBody = document.getElementById("chat-body");
-
-      const userMessage = document.createElement("div");
-      userMessage.classList.add("message", "user");
-      userMessage.textContent = "Tú: " + message;
-      chatBody.appendChild(userMessage);
-
-      const botMessage = document.createElement("div");
-      botMessage.classList.add("message", "bot");
-
-      let response = "No estoy seguro, ¿podrías intentar formularlo de otra manera?";
-
-      const msg = message.toLowerCase();
-
-      if (msg.includes("alimentación") || msg.includes("comer") || msg.includes("dieta")) {
-        response = "Una alimentación saludable consiste en consumir una variedad de alimentos naturales: frutas, verduras, legumbres, granos enteros, proteínas magras y grasas saludables como el aceite de oliva o aguacate. Evita alimentos ultraprocesados, azúcares refinados y bebidas azucaradas.";
-      } else if (msg.includes("ejercicio") || msg.includes("actividad física") || msg.includes("deporte")) {
-        response = "El ejercicio regular mejora tu salud física y mental. Realiza actividades que disfrutes, como caminar, nadar o practicar yoga. 150 minutos semanales es una excelente meta.";
-      } else if (msg.includes("bienestar") || msg.includes("mental") || msg.includes("estrés") || msg.includes("ansiedad")) {
-        response = "Para el bienestar mental, medita, duerme bien, mantén relaciones sanas y escribe tus emociones. No dudes en pedir ayuda profesional si lo necesitas.";
-      } else if (msg.includes("agua") || msg.includes("hidratación")) {
-        response = "Se recomienda beber entre 1.5 y 2 litros de agua al día. La hidratación adecuada mejora tu piel, energía y digestión.";
-      }
-
-      botMessage.textContent = "Bot: " + response;
-      chatBody.appendChild(botMessage);
-
-      chatBody.scrollTop = chatBody.scrollHeight;
-      input.value = "";
-    }
-
-    function previewImage(event) {
-      const gallery = document.getElementById("user-gallery");
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.result;
-        gallery.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    }
-  </script>
-
-</body>
-</html>
+    /* Carousel */
