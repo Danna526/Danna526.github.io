@@ -23,12 +23,6 @@
     h1, h2, h3 {
       color: #2e7d32;
     }
-    img {
-      width: 300px;
-      height: auto;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
     ul {
       list-style-type: square;
       text-align: left;
@@ -92,6 +86,26 @@
       border-radius: 8px;
       padding: 10px;
     }
+    nav {
+      margin: 20px auto;
+      padding: 15px;
+      background-color: #e8f5e9;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #aaa;
+    }
+    nav ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    nav li {
+      margin: 8px 0;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2e7d32;
+    }
   </style>
 </head>
 <body>
@@ -106,8 +120,22 @@
     </ul>
   </div>
 
+  <!-- ÍNDICE DE SECCIONES -->
+  <nav>
+    <h2>📌 Índice de Contenidos</h2>
+    <ul>
+      <li><a href="#alimentacion">🥗 Alimentación Equilibrada</a></li>
+      <li><a href="#ejercicio">🏃 Ejercicio Físico</a></li>
+      <li><a href="#sueño">😴 Descanso y Sueño</a></li>
+      <li><a href="#mental">🧘 Bienestar Mental</a></li>
+      <li><a href="#sube">📷 Subir Imagen</a></li>
+      <li><a href="#recursos">📚 Recursos Adicionales</a></li>
+      <li><a href="#chatbot">🤖 Chatbot</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section>
+    <section id="alimentacion">
       <h2>🥗 Alimentación Equilibrada</h2>
       <p>Una alimentación saludable incluye:</p>
       <ul>
@@ -119,7 +147,7 @@
       <img src="1509480.png" alt="Alimentación saludable">
     </section>
 
-    <section>
+    <section id="ejercicio">
       <h2>🏃 Ejercicio Físico</h2>
       <ul>
         <li>30 minutos diarios de actividad física</li>
@@ -129,7 +157,7 @@
       <img src="2159472.png" alt="Ejercicio físico">
     </section>
 
-    <section>
+    <section id="sueño">
       <h2>😴 Descanso y Sueño</h2>
       <ul>
         <li>Dormir entre 7 y 9 horas</li>
@@ -139,7 +167,7 @@
       <img src="giphy.gif" alt="Sueño reparador">
     </section>
 
-    <section>
+    <section id="mental">
       <h2>🧘 Bienestar Mental</h2>
       <ul>
         <li>Practicar la gratitud</li>
@@ -149,14 +177,14 @@
       <img src="psicologia-del-color-optimized.png" alt="Bienestar emocional">
     </section>
 
-    <section id="uploadSection">
+    <section id="sube">
       <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
       <p>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</p>
       <input type="file" accept="image/*" onchange="mostrarImagen(event)">
       <div id="previewImage"></div>
     </section>
 
-    <section>
+    <section id="recursos">
       <h2>📚 Recursos Adicionales</h2>
       <ul>
         <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
@@ -185,13 +213,20 @@
 
     function responder(pregunta) {
       let respuesta = "No entendí tu pregunta. Intenta con otra.";
-      if (pregunta.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
-      else if (pregunta.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
-      else if (pregunta.includes("dormir")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
-      else if (pregunta.includes("frutas")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+      const p = pregunta.toLowerCase();
 
-      chatbox.innerHTML += "<p><strong>Tú:</strong> " + pregunta + "</p>";
-      chatbox.innerHTML += "<p><strong>Bot:</strong> " + respuesta + "</p>";
+      if (p.includes("hola") || p.includes("buenos días")) respuesta = "¡Hola! ¿Cómo puedo ayudarte con hábitos saludables?";
+      else if (p.includes("adiós") || p.includes("nos vemos")) respuesta = "¡Hasta pronto! Recuerda cuidar tu salud.";
+      else if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
+      else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
+      else if (p.includes("dormir")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
+      else if (p.includes("frutas")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+      else if (p.includes("saludable")) respuesta = "Un hábito saludable es una acción que mejora tu bienestar físico o mental.";
+      else if (p.includes("energía")) respuesta = "Dormir bien, hacer ejercicio y comer equilibrado te ayuda a tener más energía.";
+      else if (p.includes("evitar") || p.includes("malos hábitos")) respuesta = "Evita fumar, consumir alcohol en exceso y alimentos ultraprocesados.";
+
+      chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
+      chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
 
       const voz = new SpeechSynthesisUtterance(respuesta);
       window.speechSynthesis.speak(voz);
@@ -200,7 +235,7 @@
     sendBtn.addEventListener("click", () => {
       const pregunta = userInput.value.trim();
       if (pregunta) {
-        responder(pregunta.toLowerCase());
+        responder(pregunta);
         userInput.value = "";
       }
     });
@@ -218,4 +253,3 @@
     }
   </script>
 </body>
-</html>
