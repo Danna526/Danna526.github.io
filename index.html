@@ -134,7 +134,6 @@
   <main>
     <section id="alimentacion">
       <h2>🥗 Alimentación Equilibrada</h2>
-      <p>Una alimentación saludable incluye:</p>
       <ul>
         <li>Frutas y verduras frescas</li>
         <li>Cereales integrales</li>
@@ -176,7 +175,9 @@
 
     <section id="uploadSection">
       <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
-      <p>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</p>
+      <ul>
+        <li>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</li>
+      </ul>
       <input type="file" accept="image/*" onchange="mostrarImagen(event)">
       <div id="previewImage"></div>
     </section>
@@ -232,6 +233,7 @@
       if (pregunta) {
         responder(pregunta);
         userInput.value = "";
+        chatbox.scrollTop = chatbox.scrollHeight; // auto scroll
       }
     });
 
