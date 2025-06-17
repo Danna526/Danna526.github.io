@@ -20,22 +20,21 @@
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     }
-    h1 {
-      color: #2e8b57;
+    h1, h2, h3 {
+      color: #2e7d32;
     }
-    h2 {
-      color: #1b5e20;
-    }
-    .image-container img, img {
-      width: 350px;
-      height: 300px;
+    img {
+      width: 300px;
+      height: auto;
       border-radius: 10px;
+      margin: 10px 0;
     }
     ul {
       list-style-type: square;
       text-align: left;
       display: inline-block;
       font-size: 18px;
+      padding-left: 20px;
     }
     table {
       border-collapse: collapse;
@@ -55,7 +54,7 @@
       font-size: 14px;
       color: gray;
     }
-    #chatbot {
+    #chatbot, #uploadSection {
       margin-top: 40px;
       background: #fff;
       padding: 20px;
@@ -72,11 +71,11 @@
       border: 1px solid #ccc;
       padding: 10px;
       overflow-y: scroll;
-      margin-bottom: 10px;
       text-align: left;
+      margin-bottom: 10px;
     }
     #userInput {
-      width: 80%;
+      width: 70%;
       padding: 10px;
     }
     #sendBtn {
@@ -85,6 +84,13 @@
       color: white;
       border: none;
       border-radius: 5px;
+    }
+    #previewImage {
+      max-width: 100%;
+      margin-top: 15px;
+      border: 2px dashed #888;
+      border-radius: 8px;
+      padding: 10px;
     }
   </style>
 </head>
@@ -101,81 +107,62 @@
   </div>
 
   <main>
-    <section id="alimentacion">
+    <section>
       <h2>🥗 Alimentación Equilibrada</h2>
-      <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
+      <p>Una alimentación saludable incluye:</p>
+      <ul>
+        <li>Frutas y verduras frescas</li>
+        <li>Cereales integrales</li>
+        <li>Proteínas magras</li>
+        <li>Consumo moderado de grasas y azúcares</li>
+      </ul>
       <img src="1509480.png" alt="Alimentación saludable">
-
-      <h3>Hábitos Relacionados con la Alimentación</h3>
-      <table>
-        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
-        <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
-        <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
-        <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
-      </table>
-
-      <h3>Comparativa de Bebidas Saludables</h3>
-      <table>
-        <tr><th>Bebida</th><th>Calorías (100ml)</th><th>Azúcar</th><th>Recomendación</th></tr>
-        <tr><td>Agua</td><td>0</td><td>0g</td><td>Excelente</td></tr>
-        <tr><td>Jugo natural</td><td>45</td><td>9g</td><td>Moderado</td></tr>
-        <tr><td>Refresco</td><td>42</td><td>10g</td><td>Evitar</td></tr>
-        <tr><td>Té sin azúcar</td><td>1</td><td>0g</td><td>Recomendado</td></tr>
-      </table>
     </section>
 
-    <section id="ejercicio">
+    <section>
       <h2>🏃 Ejercicio Físico</h2>
-      <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
+      <ul>
+        <li>30 minutos diarios de actividad física</li>
+        <li>Caminar, correr o bailar</li>
+        <li>Ayuda a reducir el estrés</li>
+      </ul>
       <img src="2159472.png" alt="Ejercicio físico">
-
-      <h3>Hábitos de Ejercicio</h3>
-      <table>
-        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
-        <tr><td>2</td><td>Ejercicio</td><td>Actividad física</td><td>30 min diarios</td><td>Corazón sano</td><td>Obesidad</td><td>Desde la niñez</td></tr>
-      </table>
-
-      <h3>Ejercicios Recomendados por Edad</h3>
-      <table>
-        <tr><th>Edad</th><th>Ejercicios</th><th>Duración</th></tr>
-        <tr><td>Infancia</td><td>Juegos activos</td><td>60 min diarios</td></tr>
-        <tr><td>Adolescencia</td><td>Natación, fútbol</td><td>60 min diarios</td></tr>
-        <tr><td>Adultos</td><td>Caminatas, yoga</td><td>30-45 min</td></tr>
-        <tr><td>Adultos mayores</td><td>Tai chi, paseos</td><td>30 min</td></tr>
-      </table>
     </section>
 
-    <section id="descanso">
+    <section>
       <h2>😴 Descanso y Sueño</h2>
-      <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
-      <img src="giphy.gif" alt="Descanso y sueño">
-
-      <h3>Hábitos de Descanso</h3>
-      <table>
-        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
-        <tr><td>4</td><td>Dormir bien</td><td>7-9 hrs de sueño</td><td>Noches</td><td>Concentración</td><td>Insomnio</td><td>Todas</td></tr>
-      </table>
+      <ul>
+        <li>Dormir entre 7 y 9 horas</li>
+        <li>Evitar pantallas antes de dormir</li>
+        <li>Seguir una rutina constante</li>
+      </ul>
+      <img src="giphy.gif" alt="Sueño reparador">
     </section>
 
-    <section id="bienestar">
+    <section>
       <h2>🧘 Bienestar Mental</h2>
-      <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
-      <img src="psicologia-del-color-optimized.png" alt="Bienestar mental">
-
-      <h3>Hábitos para el Bienestar Mental</h3>
-      <table>
-        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
-        <tr><td>5</td><td>Evitar estrés</td><td>Manejar emociones</td><td>Diario</td><td>Bienestar emocional</td><td>Ansiedad</td><td>+12 años</td></tr>
-      </table>
+      <ul>
+        <li>Practicar la gratitud</li>
+        <li>Meditar o respirar profundo</li>
+        <li>Pedir ayuda si se necesita</li>
+      </ul>
+      <img src="psicologia-del-color-optimized.png" alt="Bienestar emocional">
     </section>
 
-    <section id="recursos">
+    <section id="uploadSection">
+      <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
+      <p>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</p>
+      <input type="file" accept="image/*" onchange="mostrarImagen(event)">
+      <div id="previewImage"></div>
+    </section>
+
+    <section>
       <h2>📚 Recursos Adicionales</h2>
       <ul>
         <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
         <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
       </ul>
-      <h3>Videos recomendados:</h3>
+      <h3>🎥 Video:</h3>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" frameborder="0" allowfullscreen></iframe>
     </section>
   </main>
@@ -217,6 +204,18 @@
         userInput.value = "";
       }
     });
+
+    function mostrarImagen(event) {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("previewImage").innerHTML =
+            `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
+        };
+        reader.readAsDataURL(archivo);
+      }
+    }
   </script>
 </body>
 </html>
