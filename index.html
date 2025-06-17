@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hábitos Saludables</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      text-align: center;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
     .container {
       background-color: white;
@@ -18,7 +18,7 @@
       margin: 50px auto;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     }
     h1 {
       color: #2e8b57;
@@ -26,8 +26,9 @@
     h2 {
       color: #1b5e20;
     }
-    .image-container img {
-      width: 200px;
+    .image-container img, img {
+      width: 350px;
+      height: 300px;
       border-radius: 10px;
     }
     ul {
@@ -54,6 +55,37 @@
       font-size: 14px;
       color: gray;
     }
+    #chatbot {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #chatbox {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    #userInput {
+      width: 80%;
+      padding: 10px;
+    }
+    #sendBtn {
+      padding: 10px 20px;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -72,13 +104,11 @@
     <section id="alimentacion">
       <h2>🥗 Alimentación Equilibrada</h2>
       <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
-      <img src="1509480.png" width="350" height="300" alt="Alimentación saludable" />
+      <img src="1509480.png" alt="Alimentación saludable">
 
       <h3>Hábitos Relacionados con la Alimentación</h3>
       <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
+        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
         <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
         <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
         <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
@@ -97,13 +127,11 @@
     <section id="ejercicio">
       <h2>🏃 Ejercicio Físico</h2>
       <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
-      <img src="2159472.png" width="350" height="300" alt="Ejercicio físico" />
+      <img src="2159472.png" alt="Ejercicio físico">
 
       <h3>Hábitos de Ejercicio</h3>
       <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
+        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
         <tr><td>2</td><td>Ejercicio</td><td>Actividad física</td><td>30 min diarios</td><td>Corazón sano</td><td>Obesidad</td><td>Desde la niñez</td></tr>
       </table>
 
@@ -120,60 +148,24 @@
     <section id="descanso">
       <h2>😴 Descanso y Sueño</h2>
       <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
-      <img src="giphy.gif" width="350" height="300" alt="Descanso y sueño" />
+      <img src="giphy.gif" alt="Descanso y sueño">
 
       <h3>Hábitos de Descanso</h3>
       <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
+        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
         <tr><td>4</td><td>Dormir bien</td><td>7-9 hrs de sueño</td><td>Noches</td><td>Concentración</td><td>Insomnio</td><td>Todas</td></tr>
       </table>
-    </section>
-
-    <section id="hidratacion">
-      <h2>💧 Hidratación</h2>
-      <p>El agua es esencial para la digestión, la circulación y el funcionamiento del cerebro.</p>
     </section>
 
     <section id="bienestar">
       <h2>🧘 Bienestar Mental</h2>
       <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
-      <img src="psicologia-del-color-optimized.png" width="350" height="300" alt="Bienestar mental" />
+      <img src="psicologia-del-color-optimized.png" alt="Bienestar mental">
 
       <h3>Hábitos para el Bienestar Mental</h3>
       <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
+        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
         <tr><td>5</td><td>Evitar estrés</td><td>Manejar emociones</td><td>Diario</td><td>Bienestar emocional</td><td>Ansiedad</td><td>+12 años</td></tr>
-      </table>
-    </section>
-
-    <section id="frutasverduras">
-      <h2>🍏 Frutas y Verduras de Temporada</h2>
-      <p>Consumir productos de temporada es más económico, sostenible y nutritivo.</p>
-
-      <h3>Calorías en más frutas por 100 gramos</h3>
-      <table>
-        <tr><th>Fruta</th><th>Calorías (kcal)</th></tr>
-        <tr><td>Manzana</td><td>52</td></tr>
-        <tr><td>Banana</td><td>89</td></tr>
-        <tr><td>Naranja</td><td>43</td></tr>
-        <tr><td>Fresas</td><td>32</td></tr>
-        <tr><td>Uvas</td><td>69</td></tr>
-        <tr><td>Sandía</td><td>30</td></tr>
-        <tr><td>Piña</td><td>50</td></tr>
-        <tr><td>Mango</td><td>60</td></tr>
-      </table>
-
-      <h3>Aporte Nutricional de Algunas Frutas</h3>
-      <table>
-        <tr><th>Fruta</th><th>Vitamina</th><th>Minerales</th><th>Beneficios</th></tr>
-        <tr><td>Naranja</td><td>Vitamina C</td><td>Potasio</td><td>Refuerza defensas</td></tr>
-        <tr><td>Plátano</td><td>B6</td><td>Magnesio</td><td>Energía</td></tr>
-        <tr><td>Fresa</td><td>C</td><td>Manganeso</td><td>Antioxidante</td></tr>
-        <tr><td>Manzana</td><td>A</td><td>Fósforo</td><td>Digestión</td></tr>
       </table>
     </section>
 
@@ -184,18 +176,47 @@
         <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
       </ul>
       <h3>Videos recomendados:</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" title="Alimentación saludable" frameborder="0" allowfullscreen></iframe>
-
-      <h3>Audio educativo:</h3>
-      <audio controls>
-        <source src="videoplayback.m4a" type="audio/mp4">
-        Tu navegador no soporta la reproducción de audio.
-      </audio>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" frameborder="0" allowfullscreen></iframe>
     </section>
   </main>
+
+  <div id="chatbot">
+    <h2>🤖 Chatbot de Hábitos Saludables</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Escribe tu pregunta..." />
+    <button id="sendBtn">Enviar</button>
+  </div>
 
   <footer>
     <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
   </footer>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function responder(pregunta) {
+      let respuesta = "No entendí tu pregunta. Intenta con otra.";
+      if (pregunta.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
+      else if (pregunta.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
+      else if (pregunta.includes("dormir")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
+      else if (pregunta.includes("frutas")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+
+      chatbox.innerHTML += "<p><strong>Tú:</strong> " + pregunta + "</p>";
+      chatbox.innerHTML += "<p><strong>Bot:</strong> " + respuesta + "</p>";
+
+      const voz = new SpeechSynthesisUtterance(respuesta);
+      window.speechSynthesis.speak(voz);
+    }
+
+    sendBtn.addEventListener("click", () => {
+      const pregunta = userInput.value.trim();
+      if (pregunta) {
+        responder(pregunta.toLowerCase());
+        userInput.value = "";
+      }
+    });
+  </script>
 </body>
 </html>
