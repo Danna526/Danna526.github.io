@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hábitos Saludables</title>
   <style>
     body {
@@ -9,6 +10,7 @@
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
     .container {
       background-color: white;
@@ -16,24 +18,23 @@
       margin: 50px auto;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     }
     h1, h2, h3 {
-      color: #2e8b57;
-    }
-    ul, ol {
-      text-align: left;
-      font-size: 18px;
-      margin-left: 20px;
+      color: #2e7d32;
     }
     img {
-      max-width: 90%;
+      max-width: 300px;
       height: auto;
-      margin: 15px auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    ul {
+      list-style-type: square;
+      text-align: left;
+      display: inline-block;
+      font-size: 18px;
+      padding-left: 20px;
     }
     table {
       border-collapse: collapse;
@@ -52,40 +53,61 @@
       margin-top: 20px;
       font-size: 14px;
       color: gray;
-      text-align: center;
+    }
+    #chatbot, #uploadSection {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #chatbox {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    #userInput {
+      width: 70%;
+      padding: 10px;
+    }
+    #sendBtn {
+      padding: 10px 20px;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #previewImage {
+      max-width: 100%;
+      margin-top: 15px;
+      border: 2px dashed #888;
+      border-radius: 8px;
+      padding: 10px;
     }
     nav {
-      background-color: #2e8b57;
-      padding: 10px;
-      text-align: center;
+      margin-top: 20px;
+    }
+    nav ul {
+      list-style-type: disc;
+      display: inline-block;
+      text-align: left;
     }
     nav a {
-      color: white;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    #chatbox, #uploadbox {
-      width: 90%;
-      margin: 20px auto;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      color: #2e7d32;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#alimentacion">Alimentación</a>
-    <a href="#ejercicio">Ejercicio</a>
-    <a href="#descanso">Descanso</a>
-    <a href="#bienestar">Bienestar</a>
-    <a href="#frutasverduras">Frutas</a>
-    <a href="#recursos">Recursos</a>
-  </nav>  <div class="container">
+  <div class="container">
     <h1>Hoja de Presentación</h1>
     <ul>
       <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
@@ -94,72 +116,136 @@
       <li><strong>Grupo:</strong> 401</li>
       <li><strong>Plantel:</strong> Cobaev 46</li>
     </ul>
-  </div>  <main>
+  </div>
+
+  <nav>
+    <h2>📌 Índice</h2>
+    <ul>
+      <li><a href="#alimentacion">🥗 Alimentación Equilibrada</a></li>
+      <li><a href="#ejercicio">🏃 Ejercicio Físico</a></li>
+      <li><a href="#descanso">😴 Descanso y Sueño</a></li>
+      <li><a href="#bienestar">🧘 Bienestar Mental</a></li>
+      <li><a href="#uploadSection">📷 Subir Imagen</a></li>
+      <li><a href="#recursos">📚 Recursos Adicionales</a></li>
+      <li><a href="#chatbot">🤖 Chatbot</a></li>
+    </ul>
+  </nav>
+
+  <main>
     <section id="alimentacion">
       <h2>🥗 Alimentación Equilibrada</h2>
-      <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
+      <p>Una alimentación saludable incluye:</p>
+      <ul>
+        <li>Frutas y verduras frescas</li>
+        <li>Cereales integrales</li>
+        <li>Proteínas magras</li>
+        <li>Consumo moderado de grasas y azúcares</li>
+      </ul>
       <img src="1509480.png" alt="Alimentación saludable">
-      <h3>Hábitos Relacionados con la Alimentación</h3>
-      <table>
-        <tr><th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th></tr>
-        <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
-        <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
-        <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
-      </table>
-    </section><section id="ejercicio">
-  <h2>🏃 Ejercicio Físico</h2>
-  <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
-  <img src="2159472.png" alt="Ejercicio físico">
-</section>
+    </section>
 
-<section id="descanso">
-  <h2>😴 Descanso y Sueño</h2>
-  <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
-  <img src="giphy.gif" alt="Descanso y sueño">
-</section>
+    <section id="ejercicio">
+      <h2>🏃 Ejercicio Físico</h2>
+      <ul>
+        <li>30 minutos diarios de actividad física</li>
+        <li>Caminar, correr o bailar</li>
+        <li>Ayuda a reducir el estrés</li>
+      </ul>
+      <img src="2159472.png" alt="Ejercicio físico">
+    </section>
 
-<section id="bienestar">
-  <h2>🧘 Bienestar Mental</h2>
-  <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
-  <img src="psicologia-del-color-optimized.png" alt="Bienestar mental">
-</section>
+    <section id="descanso">
+      <h2>😴 Descanso y Sueño</h2>
+      <ul>
+        <li>Dormir entre 7 y 9 horas</li>
+        <li>Evitar pantallas antes de dormir</li>
+        <li>Seguir una rutina constante</li>
+      </ul>
+      <img src="giphy.gif" alt="Sueño reparador">
+    </section>
 
-<section id="frutasverduras">
-  <h2>🍏 Frutas y Verduras de Temporada</h2>
-  <p>Consumir productos de temporada es más económico, sostenible y nutritivo.</p>
-</section>
+    <section id="bienestar">
+      <h2>🧘 Bienestar Mental</h2>
+      <ul>
+        <li>Practicar la gratitud</li>
+        <li>Meditar o respirar profundo</li>
+        <li>Pedir ayuda si se necesita</li>
+      </ul>
+      <img src="psicologia-del-color-optimized.png" alt="Bienestar emocional">
+    </section>
 
-<section id="recursos">
-  <h2>📚 Recursos Adicionales</h2>
-  <ul>
-    <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">OMS - Hojas informativas</a></li>
-    <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Agricultura</a></li>
-  </ul>
-  <h3>Video recomendado:</h3>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" title="Alimentación saludable" frameborder="0" allowfullscreen></iframe>
-</section>
+    <section id="uploadSection">
+      <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
+      <p>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</p>
+      <input type="file" accept="image/*" onchange="mostrarImagen(event)">
+      <div id="previewImage"></div>
+    </section>
 
-<section id="uploadbox">
-  <h2>📸 Sube tu Imagen Saludable</h2>
-  <input type="file" accept="image/*">
-</section>
+    <section id="recursos">
+      <h2>📚 Recursos Adicionales</h2>
+      <ul>
+        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
+        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
+      </ul>
+      <h3>🎥 Video:</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" frameborder="0" allowfullscreen></iframe>
+    </section>
+  </main>
 
-<section id="chatbox">
-  <h2>🤖 Chatbot Saludable</h2>
-  <p><strong>Bot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy?</p>
-  <ul>
-    <li>¿Qué es un hábito saludable?</li>
-    <li>¿Cuánta agua debo beber?</li>
-    <li>¿Qué ejercicios puedo hacer si soy adolescente?</li>
-    <li>¿Qué frutas me recomiendas para el desayuno?</li>
-    <li>¿Cómo evitar el estrés diario?</li>
-    <li>Hola, ¿quién eres?</li>
-    <li>Gracias, adiós</li>
-  </ul>
-</section>
+  <div id="chatbot">
+    <h2>🤖 Chatbot de Hábitos Saludables</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Escribe tu pregunta..." />
+    <button id="sendBtn">Enviar</button>
+  </div>
 
-  </main>  <footer>
+  <footer>
     <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
   </footer>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function responder(pregunta) {
+      let respuesta = "No entendí tu pregunta. Intenta con otra.";
+      const p = pregunta.toLowerCase();
+
+      if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
+      else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
+      else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
+      else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+      else if (p.includes("hola") || p.includes("buenos días") || p.includes("buenas tardes")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
+      else if (p.includes("gracias")) respuesta = "¡De nada! Estoy para ayudarte.";
+      else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
+
+      chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
+      chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
+
+      const voz = new SpeechSynthesisUtterance(respuesta);
+      window.speechSynthesis.speak(voz);
+    }
+
+    sendBtn.addEventListener("click", () => {
+      const pregunta = userInput.value.trim();
+      if (pregunta) {
+        responder(pregunta);
+        userInput.value = "";
+      }
+    });
+
+    function mostrarImagen(event) {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("previewImage").innerHTML =
+            `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
+        };
+        reader.readAsDataURL(archivo);
+      }
+    }
+  </script>
 </body>
 </html>
