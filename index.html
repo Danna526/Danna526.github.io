@@ -2,299 +2,200 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hábitos Saludables</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #4caf50;
-      color: white;
-      padding: 1rem;
+      background-color: #f4f4f4;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
-    h1, h2, h3 {
-      margin: 0.5rem 0;
+    .container {
+      background-color: white;
+      width: 60%;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     }
-    nav {
-      background: #388e3c;
-      padding: 0.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
+    h1 {
+      color: #2e8b57;
     }
-    nav button {
-      background: #66bb6a;
-      border: none;
-      color: white;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
+    h2 {
+      color: #1b5e20;
     }
-    nav button:hover {
-      background: #81c784;
+    .image-container img {
+      width: 200px;
+      border-radius: 10px;
     }
-    section {
-      max-width: 960px;
-      margin: 1rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    ul {
+      list-style-type: square;
+      text-align: left;
+      display: inline-block;
+      font-size: 18px;
     }
     table {
-      width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
+      width: 90%;
+      margin: 20px auto;
     }
     th, td {
-      padding: 0.6rem;
+      border: 1px solid #666;
+      padding: 10px;
       text-align: center;
     }
     th {
-      background-color: #e8f5e9;
+      background-color: #c8e6c9;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 0.5rem 0;
-    }
-    #chatbot {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 8px;
-      max-height: 350px;
-      overflow-y: auto;
-      background: #f0f4f0;
-    }
-    #chat-input {
-      width: calc(100% - 80px);
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-    #send-btn {
-      width: 60px;
-      padding: 0.5rem;
-      font-size: 1rem;
-      background: #4caf50;
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 4px;
-      margin-left: 8px;
-    }
-    #send-btn:hover {
-      background: #45a049;
-    }
-    .chat-message {
-      margin-bottom: 0.8rem;
-      padding: 0.5rem;
-      border-radius: 6px;
-    }
-    .user-msg {
-      background-color: #d1e7dd;
-      text-align: right;
-    }
-    .bot-msg {
-      background-color: #e9f7ef;
-      text-align: left;
-    }
-    #music-player {
-      width: 100%;
-      margin: 1rem 0;
-    }
-    #photo-upload {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    #uploaded-photo {
-      max-width: 300px;
-      border-radius: 8px;
-      margin-top: 0.5rem;
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: gray;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Hábitos Saludables</h1>
-    <p>Mejora tu calidad de vida con buenos hábitos</p>
-  </header>
+  <div class="container">
+    <h1>Hoja de Presentación</h1>
+    <ul>
+      <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
+      <li><strong>Capacitación:</strong> Informática</li>
+      <li><strong>Módulo:</strong> Programación Web</li>
+      <li><strong>Grupo:</strong> 401</li>
+      <li><strong>Plantel:</strong> Cobaev 46</li>
+    </ul>
+  </div>
 
-  <nav>
-    <button onclick="showSection('info')">Información</button>
-    <button onclick="showSection('tables')">Tablas</button>
-    <button onclick="showSection('chat')">Chatbot</button>
-    <button onclick="showSection('music')">Música</button>
-    <button onclick="showSection('photos')">Fotos</button>
-  </nav>
+  <main>
+    <section id="alimentacion">
+      <h2>🥗 Alimentación Equilibrada</h2>
+      <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
+      <img src="1509480.png" width="350" height="300" alt="Alimentación saludable" />
 
-  <section id="info" style="display:block;">
-    <h2>Información sobre hábitos saludables</h2>
-    <p>Adoptar hábitos saludables es fundamental para mantener un buen estado físico y mental. Aquí encontrarás información clave sobre alimentación, ejercicio, hidratación, y descanso.</p>
-    <h3>Alimentación</h3>
-    <p>Una dieta equilibrada que incluya frutas, verduras, proteínas y carbohidratos complejos ayuda a mantener el cuerpo nutrido y con energía.</p>
-    <h3>Ejercicio</h3>
-    <p>Realizar actividad física regular fortalece el corazón, mejora la circulación y reduce el estrés.</p>
-    <h3>Hidratación</h3>
-    <p>Beber suficiente agua es vital para el correcto funcionamiento de los órganos y para la eliminación de toxinas.</p>
-    <h3>Descanso</h3>
-    <p>Dormir entre 7 y 9 horas por noche ayuda a la recuperación del cuerpo y a mantener un buen rendimiento diario.</p>
-    <img src="https://images.unsplash.com/photo-1554284126-7e8d3b8a5ef4?auto=format&fit=crop&w=800&q=80" alt="Persona haciendo ejercicio" />
-  </section>
-
-  <section id="tables" style="display:none;">
-    <h2>Tablas Nutricionales y de Ejercicio</h2>
-
-    <h3>Alimentos y calorías</h3>
-    <table>
-      <thead>
+      <h3>Hábitos Relacionados con la Alimentación</h3>
+      <table>
         <tr>
-          <th>Alimento</th>
-          <th>Porción</th>
-          <th>Calorías</th>
-          <th>Proteínas (g)</th>
-          <th>Carbohidratos (g)</th>
+          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>Manzana</td><td>1 mediana (182 g)</td><td>95</td><td>0.5</td><td>25</td></tr>
-        <tr><td>Pollo (pechuga)</td><td>100 g</td><td>165</td><td>31</td><td>0</td></tr>
-        <tr><td>Arroz integral</td><td>1 taza cocida</td><td>216</td><td>5</td><td>45</td></tr>
-        <tr><td>Brócoli</td><td>1 taza cocida</td><td>55</td><td>4</td><td>11</td></tr>
-      </tbody>
-    </table>
+        <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
+        <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
+        <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
+      </table>
 
-    <h3>Ejercicios recomendados</h3>
-    <table>
-      <thead>
+      <h3>Comparativa de Bebidas Saludables</h3>
+      <table>
+        <tr><th>Bebida</th><th>Calorías (100ml)</th><th>Azúcar</th><th>Recomendación</th></tr>
+        <tr><td>Agua</td><td>0</td><td>0g</td><td>Excelente</td></tr>
+        <tr><td>Jugo natural</td><td>45</td><td>9g</td><td>Moderado</td></tr>
+        <tr><td>Refresco</td><td>42</td><td>10g</td><td>Evitar</td></tr>
+        <tr><td>Té sin azúcar</td><td>1</td><td>0g</td><td>Recomendado</td></tr>
+      </table>
+    </section>
+
+    <section id="ejercicio">
+      <h2>🏃 Ejercicio Físico</h2>
+      <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
+      <img src="2159472.png" width="350" height="300" alt="Ejercicio físico" />
+
+      <h3>Hábitos de Ejercicio</h3>
+      <table>
         <tr>
-          <th>Ejercicio</th>
-          <th>Duración</th>
-          <th>Calorías quemadas</th>
-          <th>Beneficios</th>
+          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>Caminata rápida</td><td>30 minutos</td><td>150</td><td>Mejora cardiovascular</td></tr>
-        <tr><td>Yoga</td><td>45 minutos</td><td>180</td><td>Flexibilidad y relajación</td></tr>
-        <tr><td>Ciclismo</td><td>60 minutos</td><td>500</td><td>Fortalece piernas y corazón</td></tr>
-        <tr><td>Natación</td><td>30 minutos</td><td>250</td><td>Ejercicio completo sin impacto</td></tr>
-      </tbody>
-    </table>
-  </section>
+        <tr><td>2</td><td>Ejercicio</td><td>Actividad física</td><td>30 min diarios</td><td>Corazón sano</td><td>Obesidad</td><td>Desde la niñez</td></tr>
+      </table>
 
-  <section id="chat" style="display:none;">
-    <h2>Chatbot de Hábitos Saludables</h2>
-    <div id="chatbot"></div>
-    <div style="margin-top: 0.5rem; display: flex;">
-      <input id="chat-input" type="text" placeholder="Escribe tu pregunta aquí..." />
-      <button id="send-btn">Enviar</button>
-    </div>
-  </section>
+      <h3>Ejercicios Recomendados por Edad</h3>
+      <table>
+        <tr><th>Edad</th><th>Ejercicios</th><th>Duración</th></tr>
+        <tr><td>Infancia</td><td>Juegos activos</td><td>60 min diarios</td></tr>
+        <tr><td>Adolescencia</td><td>Natación, fútbol</td><td>60 min diarios</td></tr>
+        <tr><td>Adultos</td><td>Caminatas, yoga</td><td>30-45 min</td></tr>
+        <tr><td>Adultos mayores</td><td>Tai chi, paseos</td><td>30 min</td></tr>
+      </table>
+    </section>
 
-  <section id="music" style="display:none;">
-    <h2>Música para motivarte</h2>
-    <audio id="music-player" controls>
-      <source src="https://www.bensound.com/bensound-music/bensound-energic.mp3" type="audio/mpeg" />
-      Tu navegador no soporta audio.
-    </audio>
-  </section>
+    <section id="descanso">
+      <h2>😴 Descanso y Sueño</h2>
+      <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
+      <img src="giphy.gif" width="350" height="300" alt="Descanso y sueño" />
 
-  <section id="photos" style="display:none;">
-    <h2>Sube una foto de tu progreso</h2>
-    <div id="photo-upload">
-      <input type="file" id="file-input" accept="image/*" />
-      <img id="uploaded-photo" alt="Foto subida" />
-    </div>
-  </section>
+      <h3>Hábitos de Descanso</h3>
+      <table>
+        <tr>
+          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
+        </tr>
+        <tr><td>4</td><td>Dormir bien</td><td>7-9 hrs de sueño</td><td>Noches</td><td>Concentración</td><td>Insomnio</td><td>Todas</td></tr>
+      </table>
+    </section>
 
-  <script>
-    // Función para mostrar solo una sección a la vez
-    function showSection(sectionId) {
-      const sections = ['info', 'tables', 'chat', 'music', 'photos'];
-      sections.forEach(id => {
-        document.getElementById(id).style.display = (id === sectionId) ? 'block' : 'none';
-      });
-    }
+    <section id="hidratacion">
+      <h2>💧 Hidratación</h2>
+      <p>El agua es esencial para la digestión, la circulación y el funcionamiento del cerebro.</p>
+    </section>
 
-    // Chatbot simple
-    const chatbotDiv = document.getElementById('chatbot');
-    const chatInput = document.getElementById('chat-input');
-    const sendBtn = document.getElementById('send-btn');
+    <section id="bienestar">
+      <h2>🧘 Bienestar Mental</h2>
+      <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
+      <img src="psicologia-del-color-optimized.png" width="350" height="300" alt="Bienestar mental" />
 
-    function addMessage(msg, sender) {
-      const div = document.createElement('div');
-      div.className = 'chat-message ' + (sender === 'user' ? 'user-msg' : 'bot-msg');
-      div.textContent = msg;
-      chatbotDiv.appendChild(div);
-      chatbotDiv.scrollTop = chatbotDiv.scrollHeight;
-    }
+      <h3>Hábitos para el Bienestar Mental</h3>
+      <table>
+        <tr>
+          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
+        </tr>
+        <tr><td>5</td><td>Evitar estrés</td><td>Manejar emociones</td><td>Diario</td><td>Bienestar emocional</td><td>Ansiedad</td><td>+12 años</td></tr>
+      </table>
+    </section>
 
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        speechSynthesis.speak(utterance);
-      }
-    }
+    <section id="frutasverduras">
+      <h2>🍏 Frutas y Verduras de Temporada</h2>
+      <p>Consumir productos de temporada es más económico, sostenible y nutritivo.</p>
 
-    function getBotResponse(userText) {
-      userText = userText.toLowerCase();
-      if(userText.includes('alimentación') || userText.includes('comer')) {
-        return "Una alimentación balanceada incluye frutas, verduras, proteínas magras y carbohidratos complejos.";
-      }
-      if(userText.includes('ejercicio') || userText.includes('actividad física')) {
-        return "El ejercicio regular ayuda a mejorar tu salud cardiovascular y mental.";
-      }
-      if(userText.includes('agua') || userText.includes('hidratar')) {
-        return "Es importante beber al menos 2 litros de agua al día para mantener una buena hidratación.";
-      }
-      if(userText.includes('descanso') || userText.includes('dormir')) {
-        return "Dormir entre 7 y 9 horas por noche es esencial para tu recuperación y bienestar.";
-      }
-      return "Lo siento, no tengo una respuesta para eso. Intenta preguntar sobre alimentación, ejercicio, agua o descanso.";
-    }
+      <h3>Calorías en más frutas por 100 gramos</h3>
+      <table>
+        <tr><th>Fruta</th><th>Calorías (kcal)</th></tr>
+        <tr><td>Manzana</td><td>52</td></tr>
+        <tr><td>Banana</td><td>89</td></tr>
+        <tr><td>Naranja</td><td>43</td></tr>
+        <tr><td>Fresas</td><td>32</td></tr>
+        <tr><td>Uvas</td><td>69</td></tr>
+        <tr><td>Sandía</td><td>30</td></tr>
+        <tr><td>Piña</td><td>50</td></tr>
+        <tr><td>Mango</td><td>60</td></tr>
+      </table>
 
-    sendBtn.addEventListener('click', () => {
-      const userText = chatInput.value.trim();
-      if(userText === '') return;
-      addMessage(userText, 'user');
-      const botReply = getBotResponse(userText);
-      addMessage(botReply, 'bot');
-      speakText(botReply);
-      chatInput.value = '';
-    });
+      <h3>Aporte Nutricional de Algunas Frutas</h3>
+      <table>
+        <tr><th>Fruta</th><th>Vitamina</th><th>Minerales</th><th>Beneficios</th></tr>
+        <tr><td>Naranja</td><td>Vitamina C</td><td>Potasio</td><td>Refuerza defensas</td></tr>
+        <tr><td>Plátano</td><td>B6</td><td>Magnesio</td><td>Energía</td></tr>
+        <tr><td>Fresa</td><td>C</td><td>Manganeso</td><td>Antioxidante</td></tr>
+        <tr><td>Manzana</td><td>A</td><td>Fósforo</td><td>Digestión</td></tr>
+      </table>
+    </section>
 
-    chatInput.addEventListener('keypress', (e) => {
-      if(e.key === 'Enter') {
-        sendBtn.click();
-      }
-    });
+    <section id="recursos">
+      <h2>📚 Recursos Adicionales</h2>
+      <ul>
+        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
+        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
+      </ul>
+      <h3>Videos recomendados:</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" title="Alimentación saludable" frameborder="0" allowfullscreen></iframe>
 
-    // Manejo de subida de fotos
-    const fileInput = document.getElementById('file-input');
-    const uploadedPhoto = document.getElementById('uploaded-photo');
+      <h3>Audio educativo:</h3>
+      <audio controls>
+        <source src="videoplayback.m4a" type="audio/mp4">
+        Tu navegador no soporta la reproducción de audio.
+      </audio>
+    </section>
+  </main>
 
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if(file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          uploadedPhoto.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
+  <footer>
+    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+  </footer>
 </body>
 </html>
