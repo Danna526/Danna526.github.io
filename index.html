@@ -1,202 +1,301 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hábitos Saludables</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vida Saludable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      background-color: #e0f7f4;
+      color: #2e4d4f;
       margin: 0;
       padding: 0;
     }
-    .container {
-      background-color: white;
-      width: 60%;
-      margin: 50px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    }
-    h1 {
-      color: #2e8b57;
-    }
-    h2 {
-      color: #1b5e20;
-    }
-    .image-container img {
-      width: 200px;
-      border-radius: 10px;
-    }
-    ul {
-      list-style-type: square;
-      text-align: left;
-      display: inline-block;
-      font-size: 18px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 90%;
-      margin: 20px auto;
-    }
-    th, td {
-      border: 1px solid #666;
-      padding: 10px;
+
+    h1, h2, h3 {
+      color: #3fa796;
       text-align: center;
     }
-    th {
-      background-color: #c8e6c9;
+
+    p {
+      font-size: 1.2em;
+      color: #4d7c8a;
+      margin: 10px 20px;
     }
-    footer {
-      margin-top: 20px;
+
+    a {
+      color: #7bb6d9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      background-color: #a7e9af;
+      color: #2e4d4f;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8fd4a6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #f1fcfb;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 128, 128, 0.1);
+    }
+
+    header, footer {
+      background-color: #a7e9af;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      text-align: center;
+      padding: 10px;
+      background-color: #d3f8e2;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background-color: #f1fcfb;
+      border: 2px solid #a7e9af;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       font-size: 14px;
-      color: gray;
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .chat-header {
+      background-color: #8fd4a6;
+      color: #2e4d4f;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 12px 12px 0 0;
+      text-align: center;
+    }
+
+    .chat-body {
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      border-radius: 0 0 0 12px;
+    }
+
+    .chat-input button {
+      background-color: #a7e9af;
+      border: none;
+      padding: 10px;
+      border-radius: 0 0 12px 0;
+      cursor: pointer;
+    }
+
+    .message {
+      margin: 5px 0;
+    }
+
+    .user {
+      font-weight: bold;
+    }
+
+    .bot {
+      font-style: italic;
+    }
+
+    .carousel {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 12s linear infinite;
+    }
+
+    .carousel-track img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 10px;
+      border-radius: 12px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    #user-gallery img {
+      width: 100px;
+      border-radius: 10px;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>Vida Saludable</h1>
+    <p>Consejos para tu bienestar físico y mental</p>
+  </header>
+
+  <nav>
+    <a href="#alimentacion">Alimentación</a>
+    <a href="#ejercicio">Ejercicio</a>
+    <a href="#bienestar">Bienestar</a>
+    <a href="#multimedia">Multimedia</a>
+  </nav>
+
   <div class="container">
-    <h1>Hoja de Presentación</h1>
-    <ul>
-      <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
-      <li><strong>Capacitación:</strong> Informática</li>
-      <li><strong>Módulo:</strong> Programación Web</li>
-      <li><strong>Grupo:</strong> 401</li>
-      <li><strong>Plantel:</strong> Cobaev 46 </li>
-    </ul>
-  </div>
-
-  <main>
     <section id="alimentacion">
-      <h2>🥗 Alimentación Equilibrada</h2>
-      <p>Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua.</p>
-      <img src="1509480.png" width="350" height="300" alt="Alimentación saludable">
-
-      <!-- Tabla de hábitos saludables -->
-      <h3>Hábitos Relacionados con la Alimentación</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>1</td><td>Beber agua</td><td>Consumir suficiente agua al día</td><td>2 L diarios</td><td>Hidratación</td><td>Fatiga</td><td>Todas</td></tr>
-        <tr><td>3</td><td>Alimentación</td><td>Balancear nutrientes</td><td>Diariamente</td><td>Previene enfermedades</td><td>Desnutrición</td><td>Todas</td></tr>
-        <tr><td>6</td><td>Higiene</td><td>Limpieza del cuerpo</td><td>Diaria</td><td>Evita infecciones</td><td>Malos olores</td><td>Todas</td></tr>
-      </table>
-
-      <!-- Comparativa de bebidas -->
-      <h3>Comparativa de Bebidas Saludables</h3>
-      <table>
-        <tr><th>Bebida</th><th>Calorías (100ml)</th><th>Azúcar</th><th>Recomendación</th></tr>
-        <tr><td>Agua</td><td>0</td><td>0g</td><td>Excelente</td></tr>
-        <tr><td>Jugo natural</td><td>45</td><td>9g</td><td>Moderado</td></tr>
-        <tr><td>Refresco</td><td>42</td><td>10g</td><td>Evitar</td></tr>
-        <tr><td>Té sin azúcar</td><td>1</td><td>0g</td><td>Recomendado</td></tr>
-      </table>
+      <h2>Alimentación Saludable</h2>
+      <p>Una dieta balanceada incluye frutas, verduras, proteínas magras y mucha agua. Evita el exceso de azúcares y grasas procesadas para mantener tu energía estable.</p>
     </section>
 
     <section id="ejercicio">
-      <h2>🏃 Ejercicio Físico</h2>
-      <p>Realizar actividad física regularmente mejora la salud del corazón.</p>
-      <img src="2159472.png" width="350" height="300" alt="Ejercicio físico">
-
-      <!-- Tabla de hábitos relacionados -->
-      <h3>Hábitos de Ejercicio</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>2</td><td>Ejercicio</td><td>Actividad física</td><td>30 min diarios</td><td>Corazón sano</td><td>Obesidad</td><td>Desde la niñez</td></tr>
-      </table>
-
-      <!-- Tabla de ejercicios por edad -->
-      <h3>Ejercicios Recomendados por Edad</h3>
-      <table>
-        <tr><th>Edad</th><th>Ejercicios</th><th>Duración</th></tr>
-        <tr><td>Infancia</td><td>Juegos activos</td><td>60 min diarios</td></tr>
-        <tr><td>Adolescencia</td><td>Natación, fútbol</td><td>60 min diarios</td></tr>
-        <tr><td>Adultos</td><td>Caminatas, yoga</td><td>30-45 min</td></tr>
-        <tr><td>Adultos mayores</td><td>Tai chi, paseos</td><td>30 min</td></tr>
-      </table>
-    </section>
-
-    <section id="descanso">
-      <h2>😴 Descanso y Sueño</h2>
-      <p>Dormir entre 7-8 horas por noche permite que tu cuerpo se recupere.</p>
-      <img src="giphy.gif" width="350" height="300" alt="Descanso y sueño">
-
-      <!-- Tabla relacionada -->
-      <h3>Hábitos de Descanso</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>4</td><td>Dormir bien</td><td>7-9 hrs de sueño</td><td>Noches</td><td>Concentración</td><td>Insomnio</td><td>Todas</td></tr>
-      </table>
-    </section>
-
-    <section id="hidratacion">
-      <h2>💧 Hidratación</h2>
-      <p>El agua es esencial para la digestión, la circulación y el funcionamiento del cerebro.</p>
+      <h2>Ejercicio Regular</h2>
+      <p>Hacer ejercicio al menos 30 minutos al día ayuda a tu corazón, músculos y estado de ánimo. Caminar, nadar o hacer yoga son excelentes opciones.</p>
     </section>
 
     <section id="bienestar">
-      <h2>🧘 Bienestar Mental</h2>
-      <p>Dedicar tiempo a actividades relajantes ayuda a reducir el estrés y mejorar la calidad de vida.</p>
-      <img src="psicologia-del-color-optimized.png" width="350" height="300" alt="Bienestar mental">
-
-      <h3>Hábitos para el Bienestar Mental</h3>
-      <table>
-        <tr>
-          <th>#</th><th>Hábito</th><th>Descripción</th><th>Frecuencia</th><th>Beneficios</th><th>Consecuencia</th><th>Edad</th>
-        </tr>
-        <tr><td>5</td><td>Evitar estrés</td><td>Manejar emociones</td><td>Diario</td><td>Bienestar emocional</td><td>Ansiedad</td><td>+12 años</td></tr>
-      </table>
+      <h2>Bienestar Mental</h2>
+      <p>Medita, duerme bien y dedica tiempo a actividades que disfrutes. Tu salud mental es tan importante como la física.</p>
     </section>
 
-    <section id="frutasverduras">
-      <h2>🍏 Frutas y Verduras de Temporada</h2>
-      <p>Consumir productos de temporada es más económico, sostenible y nutritivo.</p>
+    <section id="multimedia">
+      <h2>Multimedia Saludable</h2>
 
-      <!-- Tabla de calorías -->
-      <h3>Calorías en más frutas por 100 gramos</h3>
-      <table>
-        <tr><th>Fruta</th><th>Calorías (kcal)</th></tr>
-        <tr><td>Manzana</td><td>52</td></tr>
-        <tr><td>Banana</td><td>89</td></tr>
-        <tr><td>Naranja</td><td>43</td></tr>
-        <tr><td>Fresas</td><td>32</td></tr>
-        <tr><td>Uvas</td><td>69</td></tr>
-        <tr><td>Sandía</td><td>30</td></tr>
-        <tr><td>Piña</td><td>50</td></tr>
-        <tr><td>Mango</td><td>60</td></tr>
-      </table>
+      <h3>Carrusel de Imágenes</h3>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="https://via.placeholder.com/300x150?text=Comida+Saludable" />
+          <img src="https://via.placeholder.com/300x150?text=Ejercicio+al+Aire+Libre" />
+          <img src="https://via.placeholder.com/300x150?text=Bienestar+Mental" />
+          <img src="https://via.placeholder.com/300x150?text=Vida+Activa" />
+        </div>
+      </div>
 
-      <!-- Aporte nutricional -->
-      <h3>Aporte Nutricional de Algunas Frutas</h3>
-      <table>
-        <tr><th>Fruta</th><th>Vitamina</th><th>Minerales</th><th>Beneficios</th></tr>
-        <tr><td>Naranja</td><td>Vitamina C</td><td>Potasio</td><td>Refuerza defensas</td></tr>
-        <tr><td>Plátano</td><td>B6</td><td>Magnesio</td><td>Energía</td></tr>
-        <tr><td>Fresa</td><td>C</td><td>Manganeso</td><td>Antioxidante</td></tr>
-        <tr><td>Manzana</td><td>A</td><td>Fósforo</td><td>Digestión</td></tr>
-      </table>
+      <h3>Sube tu imagen saludable</h3>
+      <input type="file" accept="image/*" onchange="previewImage(event)" />
+      <div id="user-gallery"></div>
+
+      <h3>Video Educativo</h3>
+      <div style="text-align: center;">
+        <iframe width="280" height="157" src="https://www.youtube.com/embed/s1u7MdrERmU" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
+      </div>
+
+      <h3>Música Relajante</h3>
+      <div style="text-align: center;">
+        <audio autoplay loop controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
     </section>
-
-    <section id="recursos">
-      <h2>📚 Recursos Adicionales</h2>
-      <ul>
-        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
-        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
-      </ul>
-      <h3>Videos recomendados:</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" title="Alimentación saludable" frameborder="0" allowfullscreen></iframe>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+    &copy; 2025 Vida Saludable. Todos los derechos reservados.
   </footer>
+
+  <div class="chatbot">
+    <div class="chat-header">Asistente Saludable</div>
+    <div class="chat-body" id="chat-body">
+      <div class="message bot">¡Hola! ¿En qué puedo ayudarte hoy?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Escribe tu pregunta..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const message = input.value.trim();
+      if (message === "") return;
+
+      const chatBody = document.getElementById("chat-body");
+
+      const userMessage = document.createElement("div");
+      userMessage.classList.add("message", "user");
+      userMessage.textContent = "Tú: " + message;
+      chatBody.appendChild(userMessage);
+
+      const botMessage = document.createElement("div");
+      botMessage.classList.add("message", "bot");
+
+      let response = "No estoy seguro, ¿podrías intentar formularlo de otra manera?";
+
+      const msg = message.toLowerCase();
+
+      if (msg.includes("alimentación") || msg.includes("comer") || msg.includes("dieta")) {
+        response = "Una alimentación saludable consiste en consumir una variedad de alimentos naturales: frutas, verduras, legumbres, granos enteros, proteínas magras y grasas saludables como el aceite de oliva o aguacate. Evita alimentos ultraprocesados, azúcares refinados y bebidas azucaradas.";
+      } else if (msg.includes("ejercicio") || msg.includes("actividad física") || msg.includes("deporte")) {
+        response = "El ejercicio regular mejora tu salud física y mental. Realiza actividades que disfrutes, como caminar, nadar o practicar yoga. 150 minutos semanales es una excelente meta.";
+      } else if (msg.includes("bienestar") || msg.includes("mental") || msg.includes("estrés") || msg.includes("ansiedad")) {
+        response = "Para el bienestar mental, medita, duerme bien, mantén relaciones sanas y escribe tus emociones. No dudes en pedir ayuda profesional si lo necesitas.";
+      } else if (msg.includes("agua") || msg.includes("hidratación")) {
+        response = "Se recomienda beber entre 1.5 y 2 litros de agua al día. La hidratación adecuada mejora tu piel, energía y digestión.";
+      }
+
+      botMessage.textContent = "Bot: " + response;
+      chatBody.appendChild(botMessage);
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+      input.value = "";
+    }
+
+    function previewImage(event) {
+      const gallery = document.getElementById("user-gallery");
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        gallery.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+
 </body>
 </html>
