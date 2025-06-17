@@ -296,79 +296,47 @@ iframe {
 
   <script>
     const toggleBtn = document.getElementById('chatbot-toggle');
-    const chatbot = document.getElementById('chatbot');
-    const sendBtn = document.getElementById('chatbot-send');
-    const input = document.getElementById('chatbot-input');
-    const messages = document.getElementById('chatbot-messages');
+const chatbot = document.getElementById('chatbot');
+const sendBtn = document.getElementById('chatbot-send');
+const input = document.getElementById('chatbot-input');
+const messages = document.getElementById('chatbot-messages');
 
-    toggleBtn.addEventListener('click', () => {
-      if (chatbot.style.display === 'flex') {
-        chatbot.style.display = 'none';
-      } else {
-        chatbot.style.display = 'flex';
-        input.focus();
-      }
-    });
+toggleBtn.addEventListener('click', () => {
+  if (chatbot.style.display === 'flex') {
+    chatbot.style.display = 'none';
+  } else {
+    chatbot.style.display = 'flex';
+    input.focus();
+  }
+});
 
-    function addMessage(text, sender = 'bot') {
-      const msgDiv = document.createElement('div');
-      msgDiv.textContent = text;
-      msgDiv.style.marginBottom = '10px';
-      msgDiv.style.padding = '6px 10px';
-      msgDiv.style.borderRadius = '10px';
-      msgDiv.style.maxWidth = '80%';
-      if(sender === 'user'){
-        msgDiv.style.backgroundColor = '#2e8b57';
-        msgDiv.style.color = 'white';
-        msgDiv.style.marginLeft = 'auto';
-      } else {
-        msgDiv.style.backgroundColor = '#e0f2f1';
-        msgDiv.style.color = '#004d40';
-        msgDiv.style.marginRight = 'auto';
-      }
-      messages.appendChild(msgDiv);
-      messages.scrollTop = messages.scrollHeight;
-    }
+// Función para normalizar texto: quitar tildes y pasar a minúsculas
+function normalize(text) {
+  const from = "ÁÉÍÓÚáéíóúÑñ";
+  const to = "AEIOUaeiounn";
+  return text
+    .toLowerCase()
+    .split("")
+    .map((c) => (from.indexOf(c) !== -1 ? to[from.indexOf(c)] : c))
+    .join("");
+}
 
-    function processInput(inputText) {
-      const text = inputText.toLowerCase();
-
-      // Respuestas básicas de ejemplo:
-      if(text.includes('agua')){
-        return 'Beber suficiente agua es esencial para una buena hidratación y salud.';
-      }
-      if(text.includes('ejercicio')){
-        return 'El ejercicio regular mejora la salud cardiovascular y mental.';
-      }
-      if(text.includes('descanso') || text.includes('sueño')){
-        return 'Dormir bien ayuda a la concentración y recuperación del cuerpo.';
-      }
-      if(text.includes('fruta') || text.includes('verdura')){
-        return 'Consumir frutas y verduras de temporada aporta vitaminas y minerales necesarios.';
-      }
-      if(text.includes('estrés') || text.includes('bienestar')){
-        return 'Practicar actividades relajantes reduce el estrés y mejora el bienestar mental.';
-      }
-      return 'Lo siento, no entiendo la pregunta. Intenta con otra consulta sobre hábitos saludables.';
-    }
-
-    function sendMessage() {
-      const text = input.value.trim();
-      if(text === '') return;
-      addMessage(text, 'user');
-      input.value = '';
-      setTimeout(() => {
-        const response = processInput(text);
-        addMessage(response, 'bot');
-      }, 500);
-    }
-
-    sendBtn.addEventListener('click', sendMessage);
-    input.addEventListener('keydown', e => {
-      if(e.key === 'Enter') {
-        sendMessage();
-      }
-    });
+// Base simple de preguntas y respuestas
+const qaPairs = [
+  {
+    questions: [
+      "como puedo mejorar mi alimentacion",
+      "que debo comer para estar sano",
+      "que alimentos son buenos para mi",
+      "como mejoro mi alimentacion",
+      "que debo comer para estar sano",
+    ],
+    answer:
+      "¡Hola! Para mejorar tu alimentación, te recomiendo incluir más frutas, verduras y cereales integrales en tu dieta. También bebe suficiente agua y evita alimentos procesados o con mucho azúcar. ¿Quieres que te sugiera recetas saludables?",
+  },
+  {
+    questions: [
+      "cuanto ejercicio debo
   </script>
 </body>
 </html>
