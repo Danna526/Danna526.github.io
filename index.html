@@ -336,7 +336,226 @@ const qaPairs = [
   },
   {
     questions: [
-      "cuanto ejercicio debo
+      "cuanto ejercicio debo hacer",
+      "que tipo de ejercicio es mejor",
+      "cuanto tiempo debo entrenar cada dia",
+      "cuanto ejercicio hago",
+      "que tipo de ejercicios son buenos",
+    ],
+    answer:
+      "Lo ideal es hacer al menos 30 minutos de ejercicio moderado todos los días, como caminar, nadar o hacer yoga. Esto ayuda a mantener tu corazón sano y tu cuerpo activo. ¿Quieres que te recomiende ejercicios según tu edad?",
+  },
+  {
+    questions: [
+      "cuantas horas debo dormir",
+      "por que es importante dormir bien",
+      "cuantas horas duermo",
+      "porque es importante dormir",
+    ],
+    answer:
+      "Dormir entre 7 y 8 horas cada noche es clave para que tu cuerpo y mente se recuperen. Dormir bien mejora la concentración, el ánimo y la salud en general. ¿Quieres consejos para dormir mejor?",
+  },
+  {
+    questions: [
+      "como manejo el estres",
+      "que hago si estoy muy estresado",
+      "que hago si tengo mucho estres",
+    ],
+    answer:
+      "Para manejar el estrés, es bueno dedicar tiempo a actividades relajantes como meditar, escuchar música o caminar al aire libre. También hablar con alguien de confianza ayuda mucho. ¿Quieres que te enseñe técnicas fáciles para relajarte?",
+  },
+  {
+    questions: [
+      "por que es importante beber agua",
+      "cuanta agua debo tomar",
+      "agua es importante",
+      "cuanta agua debo beber",
+    ],
+    answer:
+      "El agua es vital para que tu cuerpo funcione bien: ayuda a la digestión, la circulación y el cerebro. Se recomienda beber al menos 2 litros al día, pero puede variar según tu actividad. ¿Quieres ideas para tomar más agua cada día?",
+  },
+];
+
+// Función para buscar respuesta
+function getAnswer(userInput) {
+  const normalizedInput = normalize(userInput);
+  for (const pair of qaPairs) {
+    for (const q of pair.questions) {
+      if (normalizedInput.includes(q)) {
+        return pair.answer;
+      }
+    }
+  }
+  return "Lo siento, no entendí tu pregunta. ¿Podrías reformularla? 😊";
+}
+
+function addMessage(text, sender = "bot") {
+  const msgDiv = document.createElement("div");
+  msgDiv.textContent = text;
+  msgDiv.style.marginBottom = "10px";
+  msgDiv.style.padding = "6px 10px";
+  msgDiv.style.borderRadius = "10px";
+  msgDiv.style.maxWidth = "80%";
+  if (sender === "user") {
+    msgDiv.style.backgroundColor = "#2e8b57";
+    msgDiv.style.color = "white";
+    msgDiv.style.marginLeft = "auto";
+  } else {
+    msgDiv.style.backgroundColor = "#e0f2f1";
+    msgDiv.style.color = "#004d40";
+    msgDiv.style.marginRight = "auto";
+  }
+  messages.appendChild(msgDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+  const text = input.value.trim();
+  if (text === "") return;
+  addMessage(text, "user");
+  input.value = "";
+  setTimeout(() => {
+    const response = getAnswer(text);
+    addMessage(response, "bot");
+  }, 500);
+}
+
+sendBtn.addEventListener("click", sendMessage);
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});const toggleBtn = document.getElementById('chatbot-toggle');
+const chatbot = document.getElementById('chatbot');
+const sendBtn = document.getElementById('chatbot-send');
+const input = document.getElementById('chatbot-input');
+const messages = document.getElementById('chatbot-messages');
+
+toggleBtn.addEventListener('click', () => {
+  if (chatbot.style.display === 'flex') {
+    chatbot.style.display = 'none';
+  } else {
+    chatbot.style.display = 'flex';
+    input.focus();
+  }
+});
+
+// Función para normalizar texto: quitar tildes y pasar a minúsculas
+function normalize(text) {
+  const from = "ÁÉÍÓÚáéíóúÑñ";
+  const to = "AEIOUaeiounn";
+  return text
+    .toLowerCase()
+    .split("")
+    .map((c) => (from.indexOf(c) !== -1 ? to[from.indexOf(c)] : c))
+    .join("");
+}
+
+// Base simple de preguntas y respuestas
+const qaPairs = [
+  {
+    questions: [
+      "como puedo mejorar mi alimentacion",
+      "que debo comer para estar sano",
+      "que alimentos son buenos para mi",
+      "como mejoro mi alimentacion",
+      "que debo comer para estar sano",
+    ],
+    answer:
+      "¡Hola! Para mejorar tu alimentación, te recomiendo incluir más frutas, verduras y cereales integrales en tu dieta. También bebe suficiente agua y evita alimentos procesados o con mucho azúcar. ¿Quieres que te sugiera recetas saludables?",
+  },
+  {
+    questions: [
+      "cuanto ejercicio debo hacer",
+      "que tipo de ejercicio es mejor",
+      "cuanto tiempo debo entrenar cada dia",
+      "cuanto ejercicio hago",
+      "que tipo de ejercicios son buenos",
+    ],
+    answer:
+      "Lo ideal es hacer al menos 30 minutos de ejercicio moderado todos los días, como caminar, nadar o hacer yoga. Esto ayuda a mantener tu corazón sano y tu cuerpo activo. ¿Quieres que te recomiende ejercicios según tu edad?",
+  },
+  {
+    questions: [
+      "cuantas horas debo dormir",
+      "por que es importante dormir bien",
+      "cuantas horas duermo",
+      "porque es importante dormir",
+    ],
+    answer:
+      "Dormir entre 7 y 8 horas cada noche es clave para que tu cuerpo y mente se recuperen. Dormir bien mejora la concentración, el ánimo y la salud en general. ¿Quieres consejos para dormir mejor?",
+  },
+  {
+    questions: [
+      "como manejo el estres",
+      "que hago si estoy muy estresado",
+      "que hago si tengo mucho estres",
+    ],
+    answer:
+      "Para manejar el estrés, es bueno dedicar tiempo a actividades relajantes como meditar, escuchar música o caminar al aire libre. También hablar con alguien de confianza ayuda mucho. ¿Quieres que te enseñe técnicas fáciles para relajarte?",
+  },
+  {
+    questions: [
+      "por que es importante beber agua",
+      "cuanta agua debo tomar",
+      "agua es importante",
+      "cuanta agua debo beber",
+    ],
+    answer:
+      "El agua es vital para que tu cuerpo funcione bien: ayuda a la digestión, la circulación y el cerebro. Se recomienda beber al menos 2 litros al día, pero puede variar según tu actividad. ¿Quieres ideas para tomar más agua cada día?",
+  },
+];
+
+// Función para buscar respuesta
+function getAnswer(userInput) {
+  const normalizedInput = normalize(userInput);
+  for (const pair of qaPairs) {
+    for (const q of pair.questions) {
+      if (normalizedInput.includes(q)) {
+        return pair.answer;
+      }
+    }
+  }
+  return "Lo siento, no entendí tu pregunta. ¿Podrías reformularla? 😊";
+}
+
+function addMessage(text, sender = "bot") {
+  const msgDiv = document.createElement("div");
+  msgDiv.textContent = text;
+  msgDiv.style.marginBottom = "10px";
+  msgDiv.style.padding = "6px 10px";
+  msgDiv.style.borderRadius = "10px";
+  msgDiv.style.maxWidth = "80%";
+  if (sender === "user") {
+    msgDiv.style.backgroundColor = "#2e8b57";
+    msgDiv.style.color = "white";
+    msgDiv.style.marginLeft = "auto";
+  } else {
+    msgDiv.style.backgroundColor = "#e0f2f1";
+    msgDiv.style.color = "#004d40";
+    msgDiv.style.marginRight = "auto";
+  }
+  messages.appendChild(msgDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+  const text = input.value.trim();
+  if (text === "") return;
+  addMessage(text, "user");
+  input.value = "";
+  setTimeout(() => {
+    const response = getAnswer(text);
+    addMessage(response, "bot");
+  }, 500);
+}
+
+sendBtn.addEventListener("click", sendMessage);
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
   </script>
 </body>
 </html>
