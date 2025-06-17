@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hábitos Saludables 2.0</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hábitos Saludables</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,10 +12,12 @@
       color: #333;
       margin: 0;
       padding: 0;
+      text-align: center;
+      line-height: 1.6;
     }
     .container {
-      background-color: #fff;
-      width: 80%;
+      background-color: white;
+      width: 60%;
       margin: 50px auto;
       padding: 20px 40px;
       border-radius: 15px;
@@ -23,37 +25,54 @@
     }
     h1, h2, h3 {
       color: #176b87;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     ul {
-      list-style-type: disc;
-      padding-left: 20px;
+      list-style-type: square;
+      text-align: left;
+      display: inline-block;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
-    section {
-      margin-bottom: 40px;
-    }
-    .image-container img, img {
+    img {
+      border-radius: 12px;
+      margin: 20px 0;
       max-width: 100%;
-      border-radius: 10px;
+      height: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     table {
       border-collapse: collapse;
-      width: 100%;
-      margin-top: 20px;
+      width: 90%;
+      margin: 20px auto 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
+      border: 1px solid #a9cbd1;
+      padding: 12px 15px;
       text-align: center;
     }
     th {
       background-color: #b3d6e8;
+      color: #06425c;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f0f8ff;
     }
     footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #eee;
+      margin-top: 40px;
       font-size: 14px;
+      color: #666;
+    }
+    iframe {
+      margin: 20px auto 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 90%;
+      height: 315px;
+      display: block;
     }
     #chatbot-toggle {
       position: fixed;
@@ -67,134 +86,162 @@
       height: 60px;
       font-size: 30px;
       cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       z-index: 1000;
     }
     #chatbot {
       position: fixed;
       bottom: 90px;
       right: 20px;
-      width: 300px;
+      width: 320px;
       max-height: 400px;
       background: white;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       display: none;
       flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      overflow: hidden;
       z-index: 1000;
     }
     #chatbot-header {
       background-color: #176b87;
       color: white;
       padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
       text-align: center;
     }
     #chatbot-messages {
       flex-grow: 1;
       padding: 10px;
       overflow-y: auto;
+      font-size: 14px;
+      text-align: left;
+      height: 200px;
     }
     #chatbot-input-container {
       display: flex;
     }
     #chatbot-input {
       flex: 1;
-      padding: 10px;
+      padding: 8px;
       border: none;
       border-top: 1px solid #ccc;
     }
     #chatbot-send {
-      padding: 10px;
-      border: none;
+      padding: 8px;
       background-color: #176b87;
       color: white;
+      border: none;
       cursor: pointer;
-    }
-    #upload-form {
-      margin-top: 20px;
-    }
-    #gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    audio {
-      display: block;
-      margin: 20px auto;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hábitos Saludables 2.0</h1>
-    <h2>Bienvenido a tu guía interactiva de salud</h2>
-    <p>En esta plataforma podrás aprender, interactuar y compartir tus platillos favoritos saludables.</p>
 
-    <h3>🎵 Música Relajante</h3>
-    <audio controls loop>
-      <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mp3">
-      Tu navegador no soporta la reproducción de audio.
-    </audio>
+<div class="container">
+  <h1>Hoja de Presentación</h1>
+  <ul>
+    <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
+    <li><strong>Capacitación:</strong> Informática</li>
+    <li><strong>Módulo:</strong> Programación Web</li>
+    <li><strong>Grupo:</strong> 401</li>
+    <li><strong>Plantel:</strong> Cobaev 46</li>
+  </ul>
+</div>
 
-    <h3>📸 Comparte tus platillos saludables</h3>
-    <form id="upload-form">
-      <input type="file" accept="image/*" id="imageInput">
-      <button type="button" onclick="uploadImage()">Subir Foto</button>
-    </form>
-    <div id="gallery"></div>
+<main>
+  <!-- Aquí puedes insertar tus tablas, imágenes, descripciones y secciones como ya tenías antes -->
+</main>
+
+<!-- Chatbot -->
+<button id="chatbot-toggle" aria-label="Abrir chat">💬</button>
+<div id="chatbot" role="region" aria-label="Chatbot de ayuda">
+  <div id="chatbot-header">Chatbot Hábitos Saludables</div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta..." aria-label="Mensaje de chat" />
+    <button id="chatbot-send" aria-label="Enviar mensaje">Enviar</button>
   </div>
+</div>
 
-  <button id="chatbot-toggle">💬</button>
-  <div id="chatbot">
-    <div id="chatbot-header">Chatbot Saludable</div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" placeholder="¿Cómo te puedo ayudar?">
-      <button id="chatbot-send">Enviar</button>
-    </div>
-  </div>
+<footer>
+  <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Danna Karen Bravo Sánchez y Fanny Borbonio Cano. Proyecto Web.</p>
-  </footer>
+<script>
+  const toggleBtn = document.getElementById('chatbot-toggle');
+  const chatbot = document.getElementById('chatbot');
+  const sendBtn = document.getElementById('chatbot-send');
+  const input = document.getElementById('chatbot-input');
+  const messages = document.getElementById('chatbot-messages');
 
-  <script>
-    // Chatbot básico
-    document.getElementById('chatbot-toggle').onclick = () => {
-      const bot = document.getElementById('chatbot');
-      bot.style.display = bot.style.display === 'flex' ? 'none' : 'flex';
-    };
+  toggleBtn.addEventListener('click', () => {
+    chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    input.focus();
+  });
 
-    document.getElementById('chatbot-send').onclick = () => {
-      const input = document.getElementById('chatbot-input');
-      const messages = document.getElementById('chatbot-messages');
-      const msg = document.createElement('div');
-      msg.textContent = '👤: ' + input.value;
-      messages.appendChild(msg);
+  function normalize(text) {
+    const from = "ÁÉÍÓÚáéíóúÑñ";
+    const to = "AEIOUaeiounn";
+    return text.toLowerCase().split("").map(c => from.indexOf(c) !== -1 ? to[from.indexOf(c)] : c).join("");
+  }
 
-      const reply = document.createElement('div');
-      reply.textContent = '🤖: ¡Gracias por tu mensaje! Estoy aquí para ayudarte con hábitos saludables.';
-      messages.appendChild(reply);
-      input.value = '';
-    };
-
-    // Subir imagen simulada
-    function uploadImage() {
-      const input = document.getElementById('imageInput');
-      const gallery = document.getElementById('gallery');
-      const file = input.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        const img = document.createElement('img');
-        img.src = reader.result;
-        img.alt = 'Platillo subido';
-        img.style.maxWidth = '100%';
-        gallery.appendChild(img);
-      };
-      reader.readAsDataURL(file);
+  const qaPairs = [
+    {
+      questions: ["como puedo mejorar mi alimentacion", "que debo comer para estar sano", "que alimentos son buenos para mi", "como mejoro mi alimentacion"],
+      answer: "¡Hola! Para mejorar tu alimentación, te recomiendo incluir más frutas, verduras y cereales integrales. Bebe suficiente agua y evita alimentos procesados o con mucho azúcar."
+    },
+    {
+      questions: ["cuanto ejercicio debo hacer", "que ejercicio es recomendable", "cuanto debo moverme", "que actividades fisicas son buenas"],
+      answer: "Lo ideal es realizar al menos 30 minutos de actividad física al día. Puedes caminar, correr, hacer yoga o nadar, según tu edad y condición física."
     }
-  </script>
+  ];
+
+  function speak(text) {
+    if ('speechSynthesis' in window) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'es-MX';
+      speechSynthesis.speak(utter);
+    }
+  }
+
+  sendBtn.addEventListener('click', () => {
+    const userInput = input.value.trim();
+    if (!userInput) return;
+    const userMsg = document.createElement('div');
+    userMsg.textContent = "👤 " + userInput;
+    messages.appendChild(userMsg);
+
+    const normalized = normalize(userInput);
+    let found = false;
+    for (const pair of qaPairs) {
+      if (pair.questions.some(q => normalize(q) === normalized)) {
+        const botMsg = document.createElement('div');
+        botMsg.textContent = "🤖 " + pair.answer;
+        messages.appendChild(botMsg);
+        speak(pair.answer);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      const fallback = "Lo siento, aún estoy aprendiendo y no entendí tu pregunta. ¿Puedes intentarlo de otra forma?";
+      const botMsg = document.createElement('div');
+      botMsg.textContent = "🤖 " + fallback;
+      messages.appendChild(botMsg);
+      speak(fallback);
+    }
+
+    input.value = "";
+    messages.scrollTop = messages.scrollHeight;
+  });
+
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") sendBtn.click();
+  });
+</script>
+
 </body>
 </html>
