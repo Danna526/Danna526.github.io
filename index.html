@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hábitos Saludables</title>
   <style>
+ .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.tabs button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #388e3c;
+}
+
+.tab-section {
+  display: none;
+}
+
+.tab-section.active {
+  display: block;
+}
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -119,16 +149,15 @@
   </div>
 
   <nav>
-    <h2>📌 Índice</h2>
-    <ul>
-      <li><a href="#alimentacion">🥗 Alimentación Equilibrada</a></li>
-      <li><a href="#ejercicio">🏃 Ejercicio Físico</a></li>
-      <li><a href="#descanso">😴 Descanso y Sueño</a></li>
-      <li><a href="#bienestar">🧘 Bienestar Mental</a></li>
-      <li><a href="#uploadSection">📷 Subir Imagen</a></li>
-      <li><a href="#recursos">📚 Recursos Adicionales</a></li>
-      <li><a href="#chatbot">🤖 Chatbot</a></li>
-    </ul>
+<div class="tabs">
+  <button onclick="mostrarTab('alimentacion')">🥗 Alimentación</button>
+  <button onclick="mostrarTab('ejercicio')">🏃 Ejercicio</button>
+  <button onclick="mostrarTab('descanso')">😴 Descanso</button>
+  <button onclick="mostrarTab('bienestar')">🧘 Bienestar</button>
+  <button onclick="mostrarTab('uploadSection')">📷 Imagen</button>
+  <button onclick="mostrarTab('recursos')">📚 Recursos</button>
+  <button onclick="mostrarTab('chatbot')">🤖 Chatbot</button>
+</div>
   </nav>
 
   <main>
@@ -329,5 +358,16 @@
       }
     }
   </script>
+    <script>
+  function mostrarTab(tabId) {
+    const secciones = document.querySelectorAll('.tab-section');
+    secciones.forEach(sec => sec.classList.remove('active'));
+
+    const seleccionada = document.getElementById(tabId);
+    if (seleccionada) {
+      seleccionada.classList.add('active');
+    }
+  }
+    </script>
 </body>
 </html>
