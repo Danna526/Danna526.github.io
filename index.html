@@ -319,6 +319,15 @@
   </footer>
 
   <script>
+    function mostrarTab(tabId) {
+  const secciones = document.querySelectorAll('.tab-section');
+  secciones.forEach(sec => sec.classList.remove('active'));
+
+  const seleccionada = document.getElementById(tabId);
+  if (seleccionada) {
+    seleccionada.classList.add('active');
+  }
+    }
     function responder(pregunta) {
   const p = pregunta.toLowerCase();
   let respuesta = "No entendí tu pregunta. Intenta con otra relacionada con hábitos saludables.";
