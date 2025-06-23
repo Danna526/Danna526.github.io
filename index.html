@@ -363,45 +363,53 @@
   </main>
 
   <footer>
-    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
-        </footer>
-      const p = pregunta.toLowerCase();
+  <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+</footer>
 
-      if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
-      else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
-      else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
-      else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
-      else if (p.includes("hola") || p.includes("buenos días") || p.includes("buenas tardes")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
-      else if (p.includes("gracias")) respuesta = "¡De nada! Estoy para ayudarte.";
-      else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
+<script>
+  function responder(pregunta) {
+    const p = pregunta.toLowerCase();
+    let respuesta = "No entendí tu pregunta. Intenta con otra.";
 
-      chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
-      chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
+    if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
+    else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
+    else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
+    else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+    else if (p.includes("hola") || p.includes("buenos días") || p.includes("buenas tardes")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
+    else if (p.includes("gracias")) respuesta = "¡De nada! Estoy para ayudarte.";
+    else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
 
-      const voz = new SpeechSynthesisUtterance(respuesta);
-      window.speechSynthesis.speak(voz);
+    chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
+    chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
+
+    const voz = new SpeechSynthesisUtterance(respuesta);
+    window.speechSynthesis.speak(voz);
+  }
+
+  const chatbox = document.getElementById("chatbox");
+  const userInput = document.getElementById("userInput");
+  const sendBtn = document.getElementById("sendBtn");
+
+  sendBtn.addEventListener("click", () => {
+    const pregunta = userInput.value.trim();
+    if (pregunta) {
+      responder(pregunta);
+      userInput.value = "";
+      chatbox.scrollTop = chatbox.scrollHeight;
     }
+  });
 
-    sendBtn.addEventListener("click", () => {
-      const pregunta = userInput.value.trim();
-      if (pregunta) {
-        responder(pregunta);
-        userInput.value = "";
-        chatbox.scrollTop = chatbox.scrollHeight;
-      }
-    });
-
-    function mostrarImagen(event) {
-      const archivo = event.target.files[0];
-      if (archivo) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById("previewImage").innerHTML =
-            `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
-        };
-        reader.readAsDataURL(archivo);
-      }
+  function mostrarImagen(event) {
+    const archivo = event.target.files[0];
+    if (archivo) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("previewImage").innerHTML =
+          `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
+      };
+      reader.readAsDataURL(archivo);
     }
-  </script>
+  }
+</script>
 </body>
 </html>
