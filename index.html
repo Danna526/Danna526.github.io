@@ -315,42 +315,42 @@
   </main>
 
   <footer>
-    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+    <p>Danna Karen Bravo Sánchez te amo bebé avisame cuando le cambie esto.</p>
   </footer>
 
   <script>
-    function mostrarTab(tabId) {
-      const secciones = document.querySelectorAll('.tab-section');
-      secciones.forEach(sec => sec.classList.remove('active'));
-      const seleccionada = document.getElementById(tabId);
-      if (seleccionada) {
-        seleccionada.classList.add('active');
-      }
-    }
-
-    const chatbox = document.getElementById("chatbox");
-    const userInput = document.getElementById("userInput");
-    const sendBtn = document.getElementById("sendBtn");
-
     function responder(pregunta) {
-      let respuesta = "No entendí tu pregunta. Intenta con otra.";
-      const p = pregunta.toLowerCase();
+  const p = pregunta.toLowerCase();
+  let respuesta = "No entendí tu pregunta. Intenta con otra relacionada con hábitos saludables.";
 
-      if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
-      else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
-      else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
-      else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
-      else if (p.includes("hola") || p.includes("buenos días") || p.includes("buenas tardes")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
-      else if (p.includes("gracias")) respuesta = "¡De nada! Estoy para ayudarte.";
-      else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
+  if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
+  else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
+  else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
+  else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
+  else if (p.includes("gracias")) respuesta = "¡De nada! Estoy aquí para ayudarte.";
+  else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
+  else if (p.includes("desayuno")) respuesta = "El desayuno debe incluir proteína, carbohidratos complejos y una fruta para comenzar bien el día.";
+  else if (p.includes("colación") || p.includes("snack")) respuesta = "Una colación saludable puede ser una fruta, un puñado de nueces o un yogur natural.";
+  else if (p.includes("comida chatarra") || p.includes("ultraprocesados")) respuesta = "Evita consumir comida chatarra frecuentemente; suele tener grasas trans, azúcares y sodio en exceso.";
+  else if (p.includes("vitaminas")) respuesta = "Las frutas y verduras son una fuente excelente de vitaminas. Comer variado es la clave.";
+  else if (p.includes("pantallas") || p.includes("celular en la noche")) respuesta = "Evita usar pantallas al menos una hora antes de dormir para mejorar la calidad del sueño.";
+  else if (p.includes("hábitos saludables")) respuesta = "Incluyen buena alimentación, actividad física, descanso adecuado y bienestar emocional.";
+  else if (p.includes("depresión") || p.includes("ansiedad")) respuesta = "Hablar con alguien de confianza y buscar ayuda profesional es un paso muy importante. No estás solo/a.";
+  else if (p.includes("buenos días") || p.includes("hola")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
+  else if (p.includes("importancia de la salud mental")) respuesta = "La salud mental es esencial para vivir en equilibrio. Ayuda a tomar decisiones, afrontar retos y mantener relaciones sanas.";
+  else if (p.includes("luz natural") || p.includes("vitamina d")) respuesta = "Tomar el sol 10-15 minutos al día ayuda a producir vitamina D, esencial para huesos y sistema inmune.";
+  else if (p.includes("hábito")) respuesta = "Un hábito saludable es una acción que repites diariamente para cuidar tu cuerpo o mente.";
+  else if (p.includes("cuántas horas debo dormir")) respuesta = "Entre 7 y 9 horas de sueño son recomendables para adolescentes y adultos.";
+  else if (p.includes("caminar") || p.includes("andar")) respuesta = "Caminar 30 minutos al día mejora tu salud cardiovascular y ayuda a reducir el estrés.";
+  else if (p.includes("deporte favorito")) respuesta = "No tengo uno, ¡pero cualquier deporte que disfrutes es excelente para tu salud!";
+  else if (p.includes("cómo empezar hábitos saludables")) respuesta = "Empieza con metas pequeñas: beber más agua, caminar 15 minutos o comer más frutas. La constancia es clave.";
 
-      chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
-      chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
+  chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
+  chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
 
-      const voz = new SpeechSynthesisUtterance(respuesta);
-      window.speechSynthesis.speak(voz);
+  const voz = new SpeechSynthesisUtterance(respuesta);
+  window.speechSynthesis.speak(voz);
     }
-
     sendBtn.addEventListener("click", () => {
       const pregunta = userInput.value.trim();
       if (pregunta) {
