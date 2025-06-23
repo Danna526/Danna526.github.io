@@ -235,76 +235,7 @@
 
     <section id="descanso" class="tab-section">
       <h2>😴 Descanso y Sueño</h2>
-      <ul>
-        <li>Dormir entre 7 y 9 horas</li>
-        <li>Evitar pantallas antes de dormir</li>
-        <li>Seguir una rutina constante</li>
-      </ul>
-      <table>
-        <thead>
-          <tr>
-            <th>Edad</th>
-            <th>Horas de sueño recomendadas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Adolescentes (14-17 años)</td>
-            <td>8-10 horas</td>
-          </tr>
-          <tr>
-            <td>Adultos jóvenes (18-25 años)</td>
-            <td>7-9 horas</td>
-          </tr>
-          <tr>
-            <td>Adultos (26-64 años)</td>
-            <td>7-9 horas</td>
-          </tr>
-        </tbody>
-      </table>
-      <img src="giphy.gif" alt="Sueño reparador">
-    </section>
 
-    <section id="bienestar" class="tab-section">
-      <h2>🧘 Bienestar Mental</h2>
-      <ul>
-        <li>Practicar la gratitud</li>
-        <li>Meditar o respirar profundo</li>
-        <li>Pedir ayuda si se necesita</li>
-      </ul>
-      <img src="psicologia-del-color-optimized.png" alt="Bienestar emocional">
-    </section>
-
-    <section id="uploadSection" class="tab-section">
-      <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
-      <ul>
-        <li>Sube una imagen tuya comiendo saludable, haciendo ejercicio o algo positivo:</li>
-      </ul>
-      <input type="file" accept="image/*" onchange="mostrarImagen(event)">
-      <div id="previewImage"></div>
-    </section>
-
-    <section id="recursos" class="tab-section">
-      <h2>📚 Recursos Adicionales</h2>
-      <ul>
-        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
-        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
-      </ul>
-      <h3>🎥 Video:</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <div id="chatbot" class="tab-section">
-      <h2>🤖 Chatbot de Hábitos Saludables</h2>
-      <div id="chatbox"></div>
-      <input type="text" id="userInput" placeholder="Escribe tu pregunta..." />
-      <button id="sendBtn">Enviar</button>
-    </div>
-  </main>
-
-  <footer>
-    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
-  </footer>
 
   <script>
     function mostrarTab(tabId) {
@@ -321,7 +252,119 @@
     const sendBtn = document.getElementById("sendBtn");
 
     function responder(pregunta) {
-      let respuesta = "No entendí tu pregunta. Intenta con otra.";
+      let respuesta = "No entendí tu pregunta. Intenta con otra.";<body>
+  <div class="container">
+    <h1>Hoja de Presentación</h1>
+    <ul>
+      <li><strong>Elaborado por:</strong> Danna Karen Bravo Sánchez y Fanny Borbonio Cano</li>
+      <li><strong>Capacitación:</strong> Informática</li>
+      <li><strong>Módulo:</strong> Programación Web</li>
+      <li><strong>Grupo:</strong> 401</li>
+      <li><strong>Plantel:</strong> Cobaev 46</li>
+    </ul>
+  </div>
+
+  <nav>
+    <div class="tabs">
+      <button onclick="mostrarTab('alimentacion')">🥗 Alimentación</button>
+      <button onclick="mostrarTab('ejercicio')">🏃 Ejercicio</button>
+      <button onclick="mostrarTab('descanso')">😴 Descanso</button>
+      <button onclick="mostrarTab('bienestar')">🧘 Bienestar</button>
+      <button onclick="mostrarTab('uploadSection')">📷 Imagen</button>
+      <button onclick="mostrarTab('recursos')">📚 Recursos</button>
+      <button onclick="mostrarTab('chatbot')">🤖 Chatbot</button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="alimentacion" class="tab-section">
+      <h2>🥗 Alimentación Equilibrada</h2>
+      <p>Una alimentación equilibrada es aquella que proporciona los nutrientes necesarios para mantener el cuerpo sano y en buen funcionamiento. Incluir una variedad de alimentos es clave.</p>
+      <ul>
+        <li>Consumir frutas y verduras de diferentes colores todos los días.</li>
+        <li>Preferir alimentos frescos y naturales en lugar de ultraprocesados.</li>
+        <li>Beber suficiente agua (mínimo 2 litros diarios).</li>
+        <li>Evitar el exceso de azúcar, sal y grasas saturadas.</li>
+      </ul>
+      <p>Además, es importante respetar los horarios de comida y evitar comer con prisa.</p>
+      <img src="1509480.png" alt="Alimentación saludable">
+    </section>
+
+    <section id="ejercicio" class="tab-section">
+      <h2>🏃 Ejercicio Físico</h2>
+      <p>El ejercicio regular fortalece el cuerpo, mejora la salud mental y reduce el riesgo de enfermedades.</p>
+      <ul>
+        <li>Realiza al menos 30 minutos de actividad física diaria.</li>
+        <li>Alterna entre ejercicios cardiovasculares, de fuerza y flexibilidad.</li>
+        <li>Caminar o usar bicicleta en lugar del auto es una buena opción.</li>
+        <li>Practicar algún deporte o actividad que disfrutes, como danza o natación.</li>
+      </ul>
+      <p>No olvides calentar antes y estirar después para evitar lesiones.</p>
+      <img src="2159472.png" alt="Ejercicio físico">
+    </section>
+
+    <section id="descanso" class="tab-section">
+      <h2>😴 Descanso y Sueño</h2>
+      <p>Dormir bien es esencial para el funcionamiento físico y mental. La falta de sueño afecta el ánimo, la memoria y la salud en general.</p>
+      <ul>
+        <li>Establece una rutina para dormir y despertar a la misma hora todos los días.</li>
+        <li>Evita pantallas al menos 1 hora antes de dormir.</li>
+        <li>Procura que tu habitación esté oscura, silenciosa y ventilada.</li>
+        <li>Evita comidas pesadas y cafeína por la noche.</li>
+      </ul>
+      <p>El descanso adecuado mejora tu rendimiento académico, tu energía diaria y tu estado de ánimo.</p>
+      <img src="giphy.gif" alt="Sueño reparador">
+    </section>
+
+    <section id="bienestar" class="tab-section">
+      <h2>🧘 Bienestar Mental</h2>
+      <p>El bienestar emocional es tan importante como el físico. Cuidar tu salud mental implica conocer tus emociones, gestionarlas y buscar apoyo cuando lo necesitas.</p>
+      <ul>
+        <li>Practica la gratitud cada día, incluso escribiendo 3 cosas por las que estás agradecido.</li>
+        <li>Haz pausas para respirar profundamente o meditar al menos 5 minutos al día.</li>
+        <li>Comparte tus pensamientos con personas de confianza.</li>
+        <li>Realiza actividades que disfrutes, como pintar, leer o escuchar música.</li>
+      </ul>
+      <p>También puedes buscar ayuda profesional si sientes ansiedad o tristeza persistente.</p>
+      <img src="psicologia-del-color-optimized.png" alt="Bienestar emocional">
+    </section>
+
+    <section id="uploadSection" class="tab-section">
+      <h2>📷 Comparte tu Estilo de Vida Saludable</h2>
+      <p>Sube una imagen tuya aplicando alguno de los hábitos saludables mencionados. ¡Inspira a otros a cuidar su salud!</p>
+      <ul>
+        <li>Foto preparando una ensalada o plato balanceado.</li>
+        <li>Foto trotando, en el gimnasio o bailando.</li>
+        <li>Imagen de tu espacio de descanso o tu rutina de noche.</li>
+        <li>Una actividad relajante como leer, escribir o pintar.</li>
+      </ul>
+      <input type="file" accept="image/*" onchange="mostrarImagen(event)">
+      <div id="previewImage"></div>
+    </section>
+
+    <section id="recursos" class="tab-section">
+      <h2>📚 Recursos Adicionales</h2>
+      <p>Consulta estas fuentes confiables para aprender más:</p>
+      <ul>
+        <li><a href="https://www.who.int/es/news-room/fact-sheets" target="_blank">Organización Mundial de la Salud</a></li>
+        <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Nutrición</a></li>
+        <li><a href="https://www.cdc.gov/spanish/" target="_blank">CDC en Español</a></li>
+      </ul>
+      <h3>🎥 Video recomendado:</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Wr0_wULJnBE" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="chatbot" class="tab-section">
+      <h2>🤖 Chatbot de Hábitos Saludables</h2>
+      <div id="chatbox"></div>
+      <input type="text" id="userInput" placeholder="Escribe tu pregunta..." />
+      <button id="sendBtn">Enviar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Danna Karen Bravo Sánchez y Fanny Borbonio Cano.</p>
+        </footer>
       const p = pregunta.toLowerCase();
 
       if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
