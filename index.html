@@ -366,11 +366,9 @@ p {
     function mostrarTab(tabId) {
   const secciones = document.querySelectorAll('.tab-section');
   secciones.forEach(sec => sec.classList.remove('active'));
-
   const seleccionada = document.getElementById(tabId);
-  if (seleccionada) {
-    seleccionada.classList.add('active');
-  }
+  if (seleccionada) seleccionada.classList.add('active');
+    }
     }
     function responder(pregunta) {
   const p = pregunta.toLowerCase();
