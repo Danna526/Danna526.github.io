@@ -365,8 +365,8 @@ function mostrarTab(tabId) {
   const activa = document.getElementById(tabId);
   if (activa) activa.classList.add('active');
 }
-    }
-    function responder(pregunta) {
+
+function responder(pregunta) {
   const p = pregunta.toLowerCase();
   let respuesta = "No entendí tu pregunta. Intenta con otra relacionada con hábitos saludables.";
 
@@ -397,27 +397,28 @@ function mostrarTab(tabId) {
 
   const voz = new SpeechSynthesisUtterance(respuesta);
   window.speechSynthesis.speak(voz);
-    }
-    sendBtn.addEventListener("click", () => {
-      const pregunta = userInput.value.trim();
-      if (pregunta) {
-        responder(pregunta);
-        userInput.value = "";
-        chatbox.scrollTop = chatbox.scrollHeight;
-      }
-    });
+}
 
-    function mostrarImagen(event) {
-      const archivo = event.target.files[0];
-      if (archivo) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById("previewImage").innerHTML =
-            `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
-        };
-        reader.readAsDataURL(archivo);
-      }
-    }
+sendBtn.addEventListener("click", () => {
+  const pregunta = userInput.value.trim();
+  if (pregunta) {
+    responder(pregunta);
+    userInput.value = "";
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+});
+
+function mostrarImagen(event) {
+  const archivo = event.target.files[0];
+  if (archivo) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById("previewImage").innerHTML =
+        `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
+    };
+    reader.readAsDataURL(archivo);
+  }
+}
   </script>
 </body>
 </html>
