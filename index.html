@@ -358,12 +358,13 @@ p {
   </footer>
 
   <script>
-    function mostrarTab(tabId) {
+function mostrarTab(tabId) {
   const secciones = document.querySelectorAll('.tab-section');
   secciones.forEach(sec => sec.classList.remove('active'));
-  const seleccionada = document.getElementById(tabId);
-  if (seleccionada) seleccionada.classList.add('active');
-    }
+  
+  const activa = document.getElementById(tabId);
+  if (activa) activa.classList.add('active');
+}
     }
     function responder(pregunta) {
   const p = pregunta.toLowerCase();
