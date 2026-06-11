@@ -577,9 +577,10 @@ function responder(pregunta) {
     p.includes("buenos días") ||
     p.includes("buenas tardes")
   ) {
-    respuesta = `👋 ¡Hola! Soy tu asistente de salud.
+    respuesta = `👋 ¡Hola! Soy tu asistente de salud y bienestar.
 
-Temas disponibles:
+📚 Temas disponibles:
+
 🍎 Alimentación saludable
 💰 Alimentación económica
 🏃 Actividad física
@@ -588,8 +589,22 @@ Temas disponibles:
 🛡️ Salud sexual
 💊 Métodos anticonceptivos
 🏥 Centros de salud
-🌟 Vida plena y bienestar`;
-  }
+🌟 Vida plena y bienestar
+🧼 Higiene personal
+💉 Vacunación
+🚭 Prevención de adicciones
+🦷 Salud bucal
+❤️ Salud cardiovascular
+🦴 Salud ósea
+🌞 Vitamina D
+🤧 Enfermedades comunes
+🥗 Trastornos alimenticios
+🚑 Primeros auxilios
+⚖️ Obesidad y sobrepeso
+🩸 Diabetes
+🩺 Hipertensión
+
+Escribe cualquier pregunta relacionada con estos temas.`;
 
   else if (p.includes("gracias")) {
     respuesta = "😊 ¡De nada! Estoy para ayudarte a aprender sobre salud y bienestar.";
