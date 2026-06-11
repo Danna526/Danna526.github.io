@@ -458,6 +458,269 @@ function responder(pregunta) {
   let respuesta = "";
   let sugerencias = [];
 
+// PREGUNTAS ESPECÍFICAS DE ALIMENTACIÓN
+
+if (p.includes("cuánta agua debo tomar") || p.includes("cuanta agua debo tomar")) {
+  respuesta = "💧 Se recomienda beber entre 2 y 3 litros de agua al día. La cantidad puede variar según la edad, el clima y la actividad física.";
+}
+
+else if (p.includes("qué es una alimentación balanceada") || p.includes("alimentacion balanceada")) {
+  respuesta = "🥗 Una alimentación balanceada incluye frutas, verduras, cereales, proteínas y grasas saludables en cantidades adecuadas.";
+}
+
+else if (p.includes("qué alimentos tienen proteínas") || p.includes("alimentos con proteínas")) {
+  respuesta = "🍗 Las proteínas se encuentran en huevo, pollo, pescado, leche, queso, yogur, frijoles, lentejas y nueces.";
+}
+
+else if (p.includes("qué alimentos tienen calcio")) {
+  respuesta = "🦴 El calcio se encuentra en leche, queso, yogur, sardinas, almendras y verduras de hoja verde.";
+}
+
+else if (p.includes("qué vitaminas aportan las frutas")) {
+  respuesta = "🍊 Las frutas aportan vitaminas A, C, E y antioxidantes que fortalecen el sistema inmunológico.";
+}
+
+// ACTIVIDAD FÍSICA
+
+else if (p.includes("cuánto ejercicio debo hacer") || p.includes("cuanto ejercicio debo hacer")) {
+  respuesta = "🏃 Se recomienda realizar al menos 150 minutos de actividad física moderada por semana.";
+}
+
+else if (p.includes("beneficios de caminar")) {
+  respuesta = "🚶 Caminar mejora la circulación, fortalece el corazón, ayuda a controlar el peso y reduce el estrés.";
+}
+
+else if (p.includes("ejercicios en casa")) {
+  respuesta = "🏠 Puedes hacer sentadillas, lagartijas, abdominales, saltos de tijera y estiramientos sin necesidad de equipo.";
+}
+
+// SUEÑO
+
+else if (p.includes("qué pasa si duermo poco") || p.includes("que pasa si duermo poco")) {
+  respuesta = "😴 Dormir poco puede provocar cansancio, falta de concentración, irritabilidad y problemas de salud.";
+}
+
+else if (p.includes("cómo dormir mejor") || p.includes("como dormir mejor")) {
+  respuesta = "🌙 Mantén horarios regulares, evita pantallas antes de dormir y procura un ambiente tranquilo.";
+}
+
+// SALUD MENTAL
+
+else if (p.includes("cómo controlar el estrés") || p.includes("como controlar el estres")) {
+  respuesta = "❤️ Puedes controlar el estrés realizando ejercicio, respiraciones profundas, descansando adecuadamente y hablando con alguien de confianza.";
+}
+
+else if (p.includes("qué es la salud mental")) {
+  respuesta = "🧠 La salud mental es el bienestar emocional, psicológico y social que permite afrontar los desafíos de la vida.";
+}
+
+// SALUD SEXUAL
+
+else if (p.includes("qué es una its") || p.includes("que es una its")) {
+  respuesta = "🦠 Una ITS es una infección de transmisión sexual que puede transmitirse mediante relaciones sexuales sin protección.";
+}
+
+else if (p.includes("cómo prevenir its") || p.includes("como prevenir its")) {
+  respuesta = "🛡️ El uso correcto del condón y los chequeos médicos ayudan a prevenir las ITS.";
+}
+
+else if (p.includes("qué tan efectivo es el condón") || p.includes("que tan efectivo es el condon")) {
+  respuesta = "💊 El condón es uno de los métodos más efectivos para prevenir embarazos e infecciones cuando se usa correctamente.";
+}
+
+else if (p.includes("métodos anticonceptivos") || p.includes("metodos anticonceptivos")) {
+  respuesta = "💊 Existen condones, pastillas anticonceptivas, implantes, DIU, inyecciones y otros métodos.";
+}
+
+// CENTROS DE SALUD
+
+else if (p.includes("qué servicios ofrece un centro de salud")) {
+  respuesta = "🏥 Los centros de salud ofrecen consultas médicas, vacunación, control prenatal, orientación nutricional y prevención de enfermedades.";
+}
+
+else if (p.includes("por qué son importantes las vacunas")) {
+  respuesta = "💉 Las vacunas protegen contra enfermedades graves y ayudan a evitar epidemias.";
+}
+
+// HIGIENE
+
+else if (p.includes("por qué es importante lavarse las manos")) {
+  respuesta = "🧼 Lavarse las manos reduce la propagación de bacterias, virus y enfermedades infecciosas.";
+}
+
+else if (p.includes("cuántas veces debo cepillarme") || p.includes("cuantas veces debo cepillarme")) {
+  respuesta = "🦷 Se recomienda cepillarse los dientes al menos 2 o 3 veces al día.";
+}
+
+// ADICCIONES
+
+else if (p.includes("qué daños causa el tabaco")) {
+  respuesta = "🚭 El tabaco aumenta el riesgo de cáncer, enfermedades respiratorias y problemas cardiovasculares.";
+}
+
+else if (p.includes("cómo prevenir adicciones")) {
+  respuesta = "💪 Mantener hábitos saludables, actividades recreativas y apoyo familiar ayuda a prevenir adicciones.";
+}
+
+// ENFERMEDADES
+
+else if (p.includes("qué es la diabetes")) {
+  respuesta = "🩸 La diabetes es una enfermedad que provoca niveles elevados de azúcar en la sangre.";
+}
+
+else if (p.includes("síntomas de la diabetes") || p.includes("sintomas de la diabetes")) {
+  respuesta = "🩸 Los síntomas incluyen mucha sed, cansancio frecuente, visión borrosa y necesidad frecuente de orinar.";
+}
+
+else if (p.includes("qué es la hipertensión")) {
+  respuesta = "🩺 La hipertensión es una elevación persistente de la presión arterial.";
+}
+
+else if (p.includes("cómo prevenir la hipertensión")) {
+  respuesta = "❤️ Reducir la sal, hacer ejercicio y mantener un peso saludable ayuda a prevenirla.";
+}
+
+// OBESIDAD
+
+else if (p.includes("qué es la obesidad")) {
+  respuesta = "⚖️ La obesidad es una acumulación excesiva de grasa corporal que puede afectar la salud.";
+}
+
+else if (p.includes("cómo prevenir la obesidad")) {
+  respuesta = "🥗 Una alimentación equilibrada y actividad física regular ayudan a prevenir la obesidad.";
+}
+
+// PRIMEROS AUXILIOS
+
+else if (p.includes("qué hacer ante una quemadura")) {
+  respuesta = "🚑 Enfría la zona con agua limpia durante varios minutos y busca atención médica si es grave.";
+}
+
+else if (p.includes("qué hacer ante una hemorragia")) {
+  respuesta = "🩹 Aplica presión directa sobre la herida con un paño limpio y busca ayuda médica si no se detiene.";
+}
+
+  // ALIMENTACIÓN
+
+else if (p.includes("qué desayunos son económicos") || p.includes("que desayunos son economicos")) {
+  respuesta = "🍳 Un desayuno económico y saludable puede incluir avena, huevo, fruta de temporada y agua natural.";
+}
+
+else if (p.includes("qué alimentos rinden más") || p.includes("que alimentos rinden mas")) {
+  respuesta = "🫘 Frijoles, lentejas, arroz, avena, papa y tortilla suelen rendir mucho y aportar energía y nutrientes.";
+}
+
+// ACTIVIDAD FÍSICA
+
+else if (p.includes("cómo ganar condición física") || p.includes("como ganar condicion fisica")) {
+  respuesta = "🏃 Puedes mejorar tu condición física realizando actividad física regularmente, aumentando poco a poco la intensidad y manteniendo una alimentación adecuada.";
+}
+
+else if (p.includes("qué pasa si no hago ejercicio") || p.includes("que pasa si no hago ejercicio")) {
+  respuesta = "⚠️ El sedentarismo aumenta el riesgo de obesidad, enfermedades cardiovasculares, diabetes y problemas musculares.";
+}
+
+else if (p.includes("ejercicio aeróbico") || p.includes("ejercicio aerobico")) {
+  respuesta = "🏃 Los ejercicios aeróbicos mejoran la resistencia cardiovascular, como correr, caminar, nadar o andar en bicicleta.";
+}
+
+else if (p.includes("ejercicio anaeróbico") || p.includes("ejercicio anaerobico")) {
+  respuesta = "🏋️ Los ejercicios anaeróbicos desarrollan fuerza y masa muscular, como levantar pesas o hacer ejercicios de alta intensidad.";
+}
+
+// SUEÑO
+
+else if (p.includes("por qué es importante descansar") || p.includes("por que es importante descansar")) {
+  respuesta = "😴 El descanso permite que el cuerpo se recupere, fortalece el sistema inmunológico y mejora la concentración.";
+}
+
+else if (p.includes("qué hábitos mejoran el sueño") || p.includes("que habitos mejoran el sueño")) {
+  respuesta = "🌙 Mantener horarios regulares, evitar pantallas antes de dormir y reducir la cafeína ayuda a dormir mejor.";
+}
+
+// SALUD MENTAL
+
+else if (p.includes("cómo reducir la ansiedad") || p.includes("como reducir la ansiedad")) {
+  respuesta = "❤️ Respirar profundamente, hacer ejercicio, descansar y hablar con alguien de confianza puede ayudar a reducir la ansiedad.";
+}
+
+else if (p.includes("qué hacer cuando me siento triste") || p.includes("que hacer cuando me siento triste")) {
+  respuesta = "🤝 Hablar con personas de confianza, realizar actividades que disfrutes y buscar ayuda profesional si es necesario puede ayudarte.";
+}
+
+else if (p.includes("cómo mejorar mi autoestima") || p.includes("como mejorar mi autoestima")) {
+  respuesta = "🌟 Reconocer tus logros, evitar comparaciones constantes y practicar el autocuidado ayuda a fortalecer la autoestima.";
+}
+
+// SALUD SEXUAL
+
+else if (p.includes("por qué es importante la educación sexual") || p.includes("por que es importante la educacion sexual")) {
+  respuesta = "📚 La educación sexual ayuda a tomar decisiones responsables, prevenir riesgos y conocer los derechos relacionados con la sexualidad.";
+}
+
+else if (p.includes("qué derechos sexuales existen") || p.includes("que derechos sexuales existen")) {
+  respuesta = "⚖️ Los derechos sexuales incluyen recibir información confiable, decidir libremente sobre la propia sexualidad y acceder a servicios de salud.";
+}
+
+// ANTICONCEPTIVOS
+
+else if (p.includes("qué es el diu") || p.includes("que es el diu")) {
+  respuesta = "💊 El DIU es un dispositivo pequeño colocado en el útero para prevenir embarazos durante varios años.";
+}
+
+else if (p.includes("cómo funcionan las pastillas anticonceptivas") || p.includes("como funcionan las pastillas anticonceptivas")) {
+  respuesta = "💊 Las pastillas anticonceptivas contienen hormonas que ayudan a prevenir la ovulación y reducen la posibilidad de embarazo.";
+}
+
+else if (p.includes("cuál es el mejor método anticonceptivo") || p.includes("cual es el mejor metodo anticonceptivo")) {
+  respuesta = "🛡️ El método más adecuado depende de cada persona. Un profesional de salud puede orientar sobre la mejor opción.";
+}
+
+// CENTROS DE SALUD
+
+else if (p.includes("qué es la medicina preventiva") || p.includes("que es la medicina preventiva")) {
+  respuesta = "🏥 La medicina preventiva busca evitar enfermedades mediante vacunas, revisiones médicas y hábitos saludables.";
+}
+
+else if (p.includes("qué hacer en una emergencia médica") || p.includes("que hacer en una emergencia medica")) {
+  respuesta = "🚑 Mantén la calma, llama a emergencias y sigue las indicaciones de los profesionales de salud.";
+}
+
+// HIGIENE
+
+else if (p.includes("cómo mantener una buena higiene personal") || p.includes("como mantener una buena higiene personal")) {
+  respuesta = "🧼 Bañarse regularmente, lavarse las manos, cepillarse los dientes y usar ropa limpia son hábitos básicos de higiene.";
+}
+
+else if (p.includes("por qué es importante bañarse diariamente") || p.includes("por que es importante bañarse diariamente")) {
+  respuesta = "🚿 El baño ayuda a eliminar suciedad, bacterias y malos olores, además de prevenir algunas enfermedades.";
+}
+
+// DIABETES
+
+else if (p.includes("cómo prevenir la diabetes") || p.includes("como prevenir la diabetes")) {
+  respuesta = "🥗 Mantener una alimentación saludable, realizar ejercicio regularmente y conservar un peso adecuado ayuda a prevenir la diabetes tipo 2.";
+}
+
+// HIPERTENSIÓN
+
+else if (p.includes("qué alimentos debo evitar") || p.includes("que alimentos debo evitar")) {
+  respuesta = "🧂 Para prevenir la hipertensión se recomienda reducir el consumo excesivo de sal, alimentos ultraprocesados y bebidas azucaradas.";
+}
+
+// PRIMEROS AUXILIOS
+
+else if (p.includes("qué hacer si alguien se desmaya") || p.includes("que hacer si alguien se desmaya")) {
+  respuesta = "🚑 Coloca a la persona acostada boca arriba, eleva ligeramente sus piernas y busca ayuda médica si no recupera la conciencia rápidamente.";
+}
+
+else if (p.includes("qué hacer ante una fractura") || p.includes("que hacer ante una fractura")) {
+  respuesta = "🦴 Evita mover la zona afectada, inmovilízala si es posible y busca atención médica inmediatamente.";
+}
+
+else if (p.includes("cuándo llamar a emergencias") || p.includes("cuando llamar a emergencias")) {
+  respuesta = "☎️ Debes llamar a emergencias ante accidentes graves, pérdida de conciencia, dificultad para respirar o hemorragias severas.";
+}
   if (
     p.includes("alimentación") ||
     p.includes("comida") ||
