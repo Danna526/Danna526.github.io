@@ -658,17 +658,7 @@ Prueba con:
   
 });
 
-function mostrarImagen(event) {
-  const archivo = event.target.files[0];
-  if (archivo) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      document.getElementById("previewImage").innerHTML =
-        `<img src="${e.target.result}" alt="Imagen subida por usuario" style="max-width:100%; border-radius:10px;">`;
-    };
-    reader.readAsDataURL(archivo);
-  }
-}
+
   </script>
 </body>
 </html>
