@@ -824,20 +824,29 @@ else if (p.includes("cuándo llamar a emergencias") || p.includes("cuando llamar
   respuesta = "☎️ Debes llamar a emergencias ante accidentes graves, pérdida de conciencia, dificultad para respirar o hemorragias severas.";
 }
  else if (
-    p.includes("alimentación") ||
-    p.includes("comida") ||
-    p.includes("nutrición") ||
-    p.includes("frutas") ||
-    p.includes("verduras")
-  ) {
-    respuesta = "🍎 Una alimentación saludable incluye frutas, verduras, proteínas, cereales integrales y suficiente agua. Ayuda a mantener una buena salud y prevenir enfermedades.";
+  p.includes("alimentación") ||
+  p.includes("comida") ||
+  p.includes("nutrición") ||
+  p.includes("frutas") ||
+  p.includes("verduras")
+) {
+  respuesta = "🍎 Una alimentación saludable incluye frutas, verduras, proteínas, cereales integrales y suficiente agua.";
 
-    sugerencias = [
-      "¿Qué es una alimentación balanceada?",
-      "¿Cuánta agua debo tomar?",
-      "¿Qué alimentos tienen proteínas?"
-    ];
-  }
+  sugerencias = [
+    "¿Cuánta agua debo tomar?",
+    "¿Qué es una alimentación balanceada?",
+    "¿Qué alimentos tienen proteínas?",
+    "¿Qué alimentos tienen calcio?",
+    "¿Qué vitaminas aportan las frutas?",
+    "¿Qué desayunos son económicos?",
+    "¿Qué alimentos rinden más?",
+    "¿Cómo bajar de peso?",
+    "¿Cómo subir de peso?",
+    "¿Qué es el IMC?",
+    "¿Las dietas milagro funcionan?",
+    "¿Dejar de comer adelgaza?"
+  ];
+}
 
   else if (
     p.includes("económica") ||
@@ -853,31 +862,38 @@ else if (p.includes("cuándo llamar a emergencias") || p.includes("cuando llamar
   }
 
   else if (
-    p.includes("ejercicio") ||
-    p.includes("actividad física") ||
-    p.includes("deporte") ||
-    p.includes("caminar")
-  ) {
-    respuesta = "🏃 La actividad física fortalece músculos y huesos, mejora la circulación y ayuda a reducir el estrés.";
+  p.includes("ejercicio") ||
+  p.includes("actividad física") ||
+  p.includes("deporte") ||
+  p.includes("caminar")
+) {
+  respuesta = "🏃 La actividad física fortalece músculos y huesos, mejora la circulación y ayuda a reducir el estrés.";
 
-    sugerencias = [
-      "¿Cuánto ejercicio debo hacer?",
-      "¿Qué ejercicios puedo hacer en casa?"
-    ];
+  sugerencias = [
+    "¿Cuánto ejercicio debo hacer?",
+    "¿Qué ejercicios puedo hacer en casa?",
+    "¿Beneficios de caminar?",
+    "¿Cómo ganar condición física?",
+    "¿Qué pasa si no hago ejercicio?",
+    "¿Qué es ejercicio aeróbico?",
+    "¿Qué es ejercicio anaeróbico?"
+  ];
   }
 
   else if (
-    p.includes("dormir") ||
-    p.includes("sueño") ||
-    p.includes("descanso")
-  ) {
-    respuesta = "😴 Dormir entre 7 y 9 horas ayuda a la recuperación física y mental.";
+  p.includes("dormir") ||
+  p.includes("sueño") ||
+  p.includes("descanso")
+) {
+  respuesta = "😴 Dormir entre 7 y 9 horas ayuda a la recuperación física y mental.";
 
-    sugerencias = [
-      "¿Cómo dormir mejor?",
-      "¿Qué pasa si duermo poco?"
-    ];
-  }
+  sugerencias = [
+    "¿Qué pasa si duermo poco?",
+    "¿Cómo dormir mejor?",
+    "¿Por qué es importante descansar?",
+    "¿Qué hábitos mejoran el sueño?"
+  ];
+         }
 
   else if (
     p.includes("mental") ||
@@ -900,44 +916,41 @@ else if (p.includes("cuándo llamar a emergencias") || p.includes("cuando llamar
   }
 
   else if (
-    p.includes("sexual") ||
-    p.includes("sexualidad")
-  ) {
-    respuesta = "🛡️ La salud sexual implica bienestar físico, emocional y social relacionado con la sexualidad.";
+  p.includes("sexual") ||
+  p.includes("sexualidad")
+) {
+  respuesta = "🛡️ La salud sexual implica bienestar físico, emocional y social relacionado con la sexualidad.";
 
-    sugerencias = [
-      "¿Qué es la salud sexual?",
-      "¿Cómo prevenir ITS?"
-    ];
+  sugerencias = [
+    "¿Qué es una ITS?",
+    "¿Cómo prevenir ITS?",
+    "¿Qué tan efectivo es el condón?",
+    "¿Qué métodos anticonceptivos existen?",
+    "¿Por qué es importante la educación sexual?",
+    "¿Qué derechos sexuales existen?",
+    "¿Qué es el DIU?",
+    "¿Cuál es el mejor método anticonceptivo?"
+  ];
   }
 
-  else if (
-    p.includes("condón") ||
-    p.includes("condon") ||
-    p.includes("anticonceptivo") ||
-    p.includes("embarazo")
-  ) {
-    respuesta = "💊 Los métodos anticonceptivos ayudan a prevenir embarazos. El condón también ayuda a prevenir infecciones de transmisión sexual.";
-
-    sugerencias = [
-      "¿Qué métodos anticonceptivos existen?",
-      "¿Qué tan efectivo es el condón?"
-    ];
-  }
+  
 
   else if (
-    p.includes("hospital") ||
-    p.includes("doctor") ||
-    p.includes("centro de salud") ||
-    p.includes("clínica") ||
-    p.includes("clinica")
-  ) {
-    respuesta = "🏥 Los centros de salud brindan atención médica, vacunación, prevención de enfermedades y orientación.";
+  p.includes("hospital") ||
+  p.includes("doctor") ||
+  p.includes("centro de salud") ||
+  p.includes("clínica") ||
+  p.includes("clinica")
+) {
+  respuesta = "🏥 Los centros de salud brindan atención médica, vacunación, prevención de enfermedades y orientación.";
 
-    sugerencias = [
-      "¿Qué servicios ofrece un centro de salud?",
-      "¿Cuándo debo acudir al médico?"
-    ];
+  sugerencias = [
+    "¿Qué servicios ofrece un centro de salud?",
+    "¿Por qué debo ir al centro de salud?",
+    "¿Cuándo debo acudir al médico?",
+    "¿Qué es la medicina preventiva?",
+    "¿Qué hacer en una emergencia médica?"
+  ];
   }
 
   else if (
@@ -1015,17 +1028,16 @@ else if (p.includes("cuándo llamar a emergencias") || p.includes("cuando llamar
   }
 
   else if (
-    p.includes("hola") ||
-    p.includes("buenos días") ||
-    p.includes("buenas tardes") ||
-    p.includes("buenas noches")
-  ) {
-    respuesta = `👋 ¡Hola! Soy tu asistente de salud.
+  p.includes("hola") ||
+  p.includes("buenos días") ||
+  p.includes("buenas tardes") ||
+  p.includes("buenas noches")
+) {
+  respuesta = `👋 ¡Hola! Soy tu asistente de salud y bienestar.
 
-Temas disponibles:
+📚 Temas disponibles:
 
 🍎 Alimentación saludable
-💰 Alimentación económica
 🏃 Actividad física
 😴 Sueño y descanso
 ❤️ Salud mental
@@ -1038,8 +1050,32 @@ Temas disponibles:
 🚭 Prevención de adicciones
 🩸 Diabetes
 🩺 Hipertensión
+⚖️ Peso saludable y obesidad
+🚑 Primeros auxilios
+🌐 Mitos sobre la salud en internet
 
-Escribe una pregunta para comenzar.`;
+💡 Puedes preguntarme cosas como:
+
+• ¿Cuánta agua debo tomar?
+• ¿Qué es una alimentación balanceada?
+• ¿Cómo bajar de peso?
+• ¿Qué es el IMC?
+• ¿Cuánto ejercicio debo hacer?
+• ¿Cómo dormir mejor?
+• ¿Qué es la salud mental?
+• ¿Cómo controlar el estrés?
+• ¿Cómo reducir la ansiedad?
+• ¿Qué hacer cuando me siento triste?
+• ¿Qué es una ITS?
+• ¿Qué métodos anticonceptivos existen?
+• ¿Por qué debo ir al centro de salud?
+• ¿Qué es la diabetes?
+• ¿Cómo prevenir la hipertensión?
+• ¿Qué hacer ante una quemadura?
+
+📌 Si no encuentras la información que buscas en el chatbot, recuerda revisar las demás secciones de la página, donde encontrarás información, tablas, recursos y materiales complementarios salud.
+
+👈 Escribe una pregunta para comenzar.`;
   }
 
   else if (
