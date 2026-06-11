@@ -433,17 +433,28 @@ Leer el cuento sobre hábitos saludables (UAC Pensamiento Literario)
   Tu navegador no soporta la reproducción de audio.
 </audio>
 
-  <script>
+<script>
 function mostrarTab(tabId) {
   const secciones = document.querySelectorAll('.tab-section');
-  secciones.forEach(sec => sec.classList.remove('active'));
-  
+
+  secciones.forEach(sec => {
+    sec.classList.remove('active');
+  });
+
   const activa = document.getElementById(tabId);
-  if (activa) activa.classList.add('active');
+
+  if (activa) {
+    activa.classList.add('active');
+  }
 }
+
+const chatbox = document.getElementById("chatbox");
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
 
 function responder(pregunta) {
   const p = pregunta.toLowerCase();
+
   let respuesta = "";
   let sugerencias = [];
 
@@ -454,12 +465,12 @@ function responder(pregunta) {
     p.includes("frutas") ||
     p.includes("verduras")
   ) {
-    respuesta = "🍎 Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua. Ayuda a prevenir enfermedades y mejora la energía diaria.";
+    respuesta = "🍎 Una alimentación saludable incluye frutas, verduras, proteínas, cereales integrales y suficiente agua. Ayuda a mantener una buena salud y prevenir enfermedades.";
+
     sugerencias = [
       "¿Qué es una alimentación balanceada?",
       "¿Cuánta agua debo tomar?",
-      "¿Qué alimentos tienen proteínas?",
-      "¿Cómo comer saludable con poco dinero?"
+      "¿Qué alimentos tienen proteínas?"
     ];
   }
 
@@ -468,11 +479,11 @@ function responder(pregunta) {
     p.includes("barato") ||
     p.includes("ahorrar")
   ) {
-    respuesta = "💰 Comer saludable no tiene que ser caro. Frijoles, lentejas, arroz, avena, huevo y frutas de temporada son opciones nutritivas y económicas.";
+    respuesta = "💰 Comer saludable no tiene que ser caro. Frijoles, lentejas, arroz, huevo, avena y frutas de temporada son opciones económicas y nutritivas.";
+
     sugerencias = [
-      "¿Qué desayunos son económicos?",
-      "¿Cómo hacer un menú saludable barato?",
-      "¿Qué alimentos rinden más?"
+      "¿Cómo ahorrar en comida saludable?",
+      "¿Qué desayunos son económicos?"
     ];
   }
 
@@ -482,11 +493,11 @@ function responder(pregunta) {
     p.includes("deporte") ||
     p.includes("caminar")
   ) {
-    respuesta = "🏃 La actividad física fortalece músculos y huesos, mejora la circulación, reduce el estrés y ayuda a mantener un peso saludable.";
+    respuesta = "🏃 La actividad física fortalece músculos y huesos, mejora la circulación y ayuda a reducir el estrés.";
+
     sugerencias = [
       "¿Cuánto ejercicio debo hacer?",
-      "¿Qué ejercicios puedo hacer en casa?",
-      "¿Cuáles son los beneficios de caminar?"
+      "¿Qué ejercicios puedo hacer en casa?"
     ];
   }
 
@@ -495,25 +506,25 @@ function responder(pregunta) {
     p.includes("sueño") ||
     p.includes("descanso")
   ) {
-    respuesta = "😴 Dormir entre 7 y 9 horas ayuda a la memoria, concentración y recuperación del cuerpo.";
+    respuesta = "😴 Dormir entre 7 y 9 horas ayuda a la recuperación física y mental.";
+
     sugerencias = [
-      "¿Qué pasa si duermo poco?",
       "¿Cómo dormir mejor?",
-      "¿Cuántas horas debe dormir un adolescente?"
+      "¿Qué pasa si duermo poco?"
     ];
   }
 
   else if (
+    p.includes("mental") ||
     p.includes("estrés") ||
     p.includes("estres") ||
-    p.includes("ansiedad") ||
-    p.includes("mental")
+    p.includes("ansiedad")
   ) {
-    respuesta = "❤️ La salud mental es fundamental para el bienestar. Hablar con personas de confianza, descansar y realizar actividades recreativas ayuda a cuidarla.";
+    respuesta = "❤️ La salud mental es fundamental para el bienestar emocional. Hablar con personas de confianza y mantener hábitos saludables ayuda a cuidarla.";
+
     sugerencias = [
       "¿Cómo controlar el estrés?",
-      "¿Cómo cuidar mi salud mental?",
-      "¿Qué hacer cuando me siento triste?"
+      "¿Cómo cuidar mi salud mental?"
     ];
   }
 
@@ -521,66 +532,126 @@ function responder(pregunta) {
     p.includes("sexual") ||
     p.includes("sexualidad")
   ) {
-    respuesta = "🛡️ La salud sexual implica bienestar físico, emocional y social relacionado con la sexualidad. La información correcta ayuda a tomar decisiones responsables.";
+    respuesta = "🛡️ La salud sexual implica bienestar físico, emocional y social relacionado con la sexualidad.";
+
     sugerencias = [
       "¿Qué es la salud sexual?",
-      "¿Cómo prevenir ITS?",
-      "¿Por qué es importante la educación sexual?"
+      "¿Cómo prevenir ITS?"
     ];
   }
 
   else if (
-    p.includes("anticonceptivo") ||
     p.includes("condón") ||
     p.includes("condon") ||
+    p.includes("anticonceptivo") ||
     p.includes("embarazo")
   ) {
-    respuesta = "💊 Los métodos anticonceptivos ayudan a prevenir embarazos. Algunos, como el condón, también ayudan a prevenir infecciones de transmisión sexual.";
+    respuesta = "💊 Los métodos anticonceptivos ayudan a prevenir embarazos. El condón también ayuda a prevenir infecciones de transmisión sexual.";
+
     sugerencias = [
       "¿Qué métodos anticonceptivos existen?",
-      "¿Qué tan efectivo es el condón?",
-      "¿Cuál es el mejor método anticonceptivo?"
+      "¿Qué tan efectivo es el condón?"
     ];
   }
 
   else if (
     p.includes("hospital") ||
-    p.includes("clínica") ||
-    p.includes("clinica") ||
+    p.includes("doctor") ||
     p.includes("centro de salud") ||
-    p.includes("doctor")
+    p.includes("clínica") ||
+    p.includes("clinica")
   ) {
-    respuesta = "🏥 Los centros de salud ofrecen atención médica, vacunación, prevención de enfermedades y orientación para mejorar la calidad de vida.";
+    respuesta = "🏥 Los centros de salud brindan atención médica, vacunación, prevención de enfermedades y orientación.";
+
     sugerencias = [
       "¿Qué servicios ofrece un centro de salud?",
-      "¿Cuándo debo acudir al médico?",
-      "¿Por qué son importantes las vacunas?"
+      "¿Cuándo debo acudir al médico?"
     ];
   }
 
   else if (
-    p.includes("vida plena") ||
-    p.includes("bienestar") ||
-    p.includes("felicidad") ||
-    p.includes("vida saludable")
+    p.includes("vacuna") ||
+    p.includes("vacunación")
   ) {
-    respuesta = "🌟 Una vida plena se logra mediante hábitos saludables, ejercicio, buena alimentación, descanso adecuado y relaciones positivas.";
+    respuesta = "💉 Las vacunas ayudan a proteger al cuerpo contra enfermedades fortaleciendo el sistema inmunológico.";
+
     sugerencias = [
-      "¿Cómo tener una vida saludable?",
-      "¿Qué hábitos mejoran la calidad de vida?",
-      "¿Cómo alcanzar el bienestar?"
+      "¿Por qué son importantes las vacunas?",
+      "¿Cómo funcionan las vacunas?"
     ];
   }
 
   else if (
-  p.includes("hola") ||
-  p.includes("buenos días") ||
-  p.includes("buenas tardes") ||
-  p.includes("buenas noches")
-) {
-  respuesta = `👋 ¡Hola! Soy tu asistente de salud y bienestar.
+    p.includes("higiene") ||
+    p.includes("lavarse las manos")
+  ) {
+    respuesta = "🧼 La higiene personal ayuda a prevenir enfermedades y mantener una buena salud.";
 
-📚 Temas disponibles:
+    sugerencias = [
+      "¿Por qué es importante lavarse las manos?",
+      "¿Cómo mantener una buena higiene?"
+    ];
+  }
+
+  else if (
+    p.includes("dientes") ||
+    p.includes("salud bucal") ||
+    p.includes("cepillar")
+  ) {
+    respuesta = "🦷 La salud bucal ayuda a prevenir caries y enfermedades de las encías.";
+
+    sugerencias = [
+      "¿Cuántas veces debo cepillarme?",
+      "¿Qué causa las caries?"
+    ];
+  }
+
+  else if (
+    p.includes("alcohol") ||
+    p.includes("tabaco") ||
+    p.includes("drogas") ||
+    p.includes("adicciones")
+  ) {
+    respuesta = "🚭 Las adicciones afectan la salud física, mental y social. Evitarlas mejora la calidad de vida.";
+
+    sugerencias = [
+      "¿Cómo prevenir adicciones?",
+      "¿Qué daños causa el tabaco?"
+    ];
+  }
+
+  else if (
+    p.includes("diabetes")
+  ) {
+    respuesta = "🩸 La diabetes es una enfermedad que afecta la forma en que el cuerpo utiliza el azúcar en la sangre.";
+
+    sugerencias = [
+      "¿Cómo prevenir la diabetes?",
+      "¿Qué síntomas tiene?"
+    ];
+  }
+
+  else if (
+    p.includes("hipertensión") ||
+    p.includes("presión alta")
+  ) {
+    respuesta = "🩺 La hipertensión es una presión arterial elevada que puede afectar al corazón y otros órganos.";
+
+    sugerencias = [
+      "¿Cómo prevenir la hipertensión?",
+      "¿Qué alimentos debo evitar?"
+    ];
+  }
+
+  else if (
+    p.includes("hola") ||
+    p.includes("buenos días") ||
+    p.includes("buenas tardes") ||
+    p.includes("buenas noches")
+  ) {
+    respuesta = `👋 ¡Hola! Soy tu asistente de salud.
+
+Temas disponibles:
 
 🍎 Alimentación saludable
 💰 Alimentación económica
@@ -590,60 +661,33 @@ function responder(pregunta) {
 🛡️ Salud sexual
 💊 Métodos anticonceptivos
 🏥 Centros de salud
-🌟 Vida plena y bienestar
-🧼 Higiene personal
 💉 Vacunación
-🚭 Prevención de adicciones
+🧼 Higiene personal
 🦷 Salud bucal
-❤️ Salud cardiovascular
-🦴 Salud ósea
-🌞 Vitamina D
-🤧 Enfermedades comunes
-🥗 Trastornos alimenticios
-🚑 Primeros auxilios
-⚖️ Obesidad y sobrepeso
+🚭 Prevención de adicciones
 🩸 Diabetes
 🩺 Hipertensión
 
-Escribe cualquier pregunta relacionada con estos temas.`;
-}
+Escribe una pregunta para comenzar.`;
+  }
 
-else if (
-  p.includes("gracias") ||
-  p.includes("muchas gracias") ||
-  p.includes("te agradezco")
-) {
-  respuesta = "😊 ¡De nada! Me alegra poder ayudarte. Si tienes más preguntas sobre salud, alimentación, ejercicio, bienestar o cualquier otro tema disponible, estaré aquí para ayudarte.";
-  sugerencias = [
-    "¿Cómo tener una vida saludable?",
-    "¿Cuánta agua debo tomar al día?",
-    "¿Cómo cuidar mi salud mental?",
-    "¿Qué ejercicios puedo hacer en casa?"
-  ];
-}
+  else if (
+    p.includes("gracias")
+  ) {
+    respuesta = "😊 ¡De nada! Estoy aquí para ayudarte.";
+  }
+
   else {
-    respuesta = `❓ No entendí tu pregunta.
-
-Prueba con:
-• Alimentación saludable
-• Actividad física
-• Salud mental
-• Salud sexual
-• Métodos anticonceptivos
-• Centros de salud
-• Vida plena`;
+    respuesta = "❓ No entendí tu pregunta. Intenta con algún tema de salud, alimentación, ejercicio, sueño o bienestar.";
   }
 
   let htmlSugerencias = "";
 
   if (sugerencias.length > 0) {
-    htmlSugerencias = `
-      <br><br>
-      <strong>💡 También puedes preguntar:</strong>
-      <ul>
-        ${sugerencias.map(s => `<li>${s}</li>`).join("")}
-      </ul>
-    `;
+    htmlSugerencias =
+      "<br><br><strong>💡 También puedes preguntar:</strong><ul>" +
+      sugerencias.map(s => `<li>${s}</li>`).join("") +
+      "</ul>";
   }
 
   chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
@@ -651,15 +695,43 @@ Prueba con:
 
   const voz = new SpeechSynthesisUtterance(respuesta);
   voz.lang = "es-MX";
-  window.speechSynthesis.speak(voz);
+  speechSynthesis.speak(voz);
 
   chatbox.scrollTop = chatbox.scrollHeight;
 }
-  
+
+sendBtn.addEventListener("click", () => {
+  const pregunta = userInput.value.trim();
+
+  if (pregunta !== "") {
+    responder(pregunta);
+    userInput.value = "";
+  }
 });
 
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendBtn.click();
+  }
+});
 
-  </script>
+function mostrarImagen(event) {
+  const archivo = event.target.files[0];
+
+  if (archivo) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      document.getElementById("previewImage").innerHTML =
+        `<img src="${e.target.result}" alt="Imagen subida" style="max-width:100%; border-radius:10px;">`;
+    };
+
+    reader.readAsDataURL(archivo);
+  }
+}
+</script>
+
+  
 </body>
 </html>
 
