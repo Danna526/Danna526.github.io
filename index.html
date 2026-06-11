@@ -444,30 +444,191 @@ function mostrarTab(tabId) {
 
 function responder(pregunta) {
   const p = pregunta.toLowerCase();
-  let respuesta = "No entendí tu pregunta. Intenta con otra relacionada con hábitos saludables.";
+  let respuesta = "";
+  let sugerencias = [];
 
-  if (p.includes("agua")) respuesta = "Beber al menos 2 litros de agua al día mantiene el cuerpo hidratado.";
-  else if (p.includes("ejercicio")) respuesta = "Hacer ejercicio regularmente mejora tu salud física y mental.";
-  else if (p.includes("dormir") || p.includes("sueño")) respuesta = "Dormir entre 7 y 9 horas diarias es esencial para el bienestar.";
-  else if (p.includes("frutas") || p.includes("alimentación")) respuesta = "Comer frutas de temporada aporta más nutrientes y es más económico.";
-  else if (p.includes("gracias")) respuesta = "¡De nada! Estoy aquí para ayudarte.";
-  else if (p.includes("estres")) respuesta = "El ejercicio y la meditación son buenas formas de reducir el estrés.";
-  else if (p.includes("desayuno")) respuesta = "El desayuno debe incluir proteína, carbohidratos complejos y una fruta para comenzar bien el día.";
-  else if (p.includes("colación") || p.includes("snack")) respuesta = "Una colación saludable puede ser una fruta, un puñado de nueces o un yogur natural.";
-  else if (p.includes("comida chatarra") || p.includes("ultraprocesados")) respuesta = "Evita consumir comida chatarra frecuentemente; suele tener grasas trans, azúcares y sodio en exceso.";
-  else if (p.includes("vitaminas")) respuesta = "Las frutas y verduras son una fuente excelente de vitaminas. Comer variado es la clave.";
-  else if (p.includes("pantallas") || p.includes("celular en la noche")) respuesta = "Evita usar pantallas al menos una hora antes de dormir para mejorar la calidad del sueño.";
-  else if (p.includes("hábitos saludables")) respuesta = "Incluyen buena alimentación, actividad física, descanso adecuado y bienestar emocional.";
-  else if (p.includes("depresión") || p.includes("ansiedad")) respuesta = "Hablar con alguien de confianza y buscar ayuda profesional es un paso muy importante. No estás solo/a.";
-  else if (p.includes("buenos días") || p.includes("hola")) respuesta = "¡Hola! ¿En qué puedo ayudarte con tus hábitos saludables?";
-  else if (p.includes("importancia de la salud mental")) respuesta = "La salud mental es esencial para vivir en equilibrio. Ayuda a tomar decisiones, afrontar retos y mantener relaciones sanas.";
-  else if (p.includes("luz natural") || p.includes("vitamina d")) respuesta = "Tomar el sol 10-15 minutos al día ayuda a producir vitamina D, esencial para huesos y sistema inmune.";
-  else if (p.includes("hábito")) respuesta = "Un hábito saludable es una acción que repites diariamente para cuidar tu cuerpo o mente.";
-  else if (p.includes("cuántas horas debo dormir")) respuesta = "Entre 7 y 9 horas de sueño son recomendables para adolescentes y adultos.";
-  else if (p.includes("caminar") || p.includes("andar")) respuesta = "Caminar 30 minutos al día mejora tu salud cardiovascular y ayuda a reducir el estrés.";
-  else if (p.includes("deporte favorito")) respuesta = "No tengo uno, ¡pero cualquier deporte que disfrutes es excelente para tu salud!";
-  else if (p.includes("cómo empezar hábitos saludables")) respuesta = "Empieza con metas pequeñas: beber más agua, caminar 15 minutos o comer más frutas. La constancia es clave.";
+  if (
+    p.includes("alimentación") ||
+    p.includes("comida") ||
+    p.includes("nutrición") ||
+    p.includes("frutas") ||
+    p.includes("verduras")
+  ) {
+    respuesta = "🍎 Una alimentación saludable incluye frutas, verduras, cereales integrales, proteínas y suficiente agua. Ayuda a prevenir enfermedades y mejora la energía diaria.";
+    sugerencias = [
+      "¿Qué es una alimentación balanceada?",
+      "¿Cuánta agua debo tomar?",
+      "¿Qué alimentos tienen proteínas?",
+      "¿Cómo comer saludable con poco dinero?"
+    ];
+  }
 
+  else if (
+    p.includes("económica") ||
+    p.includes("barato") ||
+    p.includes("ahorrar")
+  ) {
+    respuesta = "💰 Comer saludable no tiene que ser caro. Frijoles, lentejas, arroz, avena, huevo y frutas de temporada son opciones nutritivas y económicas.";
+    sugerencias = [
+      "¿Qué desayunos son económicos?",
+      "¿Cómo hacer un menú saludable barato?",
+      "¿Qué alimentos rinden más?"
+    ];
+  }
+
+  else if (
+    p.includes("ejercicio") ||
+    p.includes("actividad física") ||
+    p.includes("deporte") ||
+    p.includes("caminar")
+  ) {
+    respuesta = "🏃 La actividad física fortalece músculos y huesos, mejora la circulación, reduce el estrés y ayuda a mantener un peso saludable.";
+    sugerencias = [
+      "¿Cuánto ejercicio debo hacer?",
+      "¿Qué ejercicios puedo hacer en casa?",
+      "¿Cuáles son los beneficios de caminar?"
+    ];
+  }
+
+  else if (
+    p.includes("dormir") ||
+    p.includes("sueño") ||
+    p.includes("descanso")
+  ) {
+    respuesta = "😴 Dormir entre 7 y 9 horas ayuda a la memoria, concentración y recuperación del cuerpo.";
+    sugerencias = [
+      "¿Qué pasa si duermo poco?",
+      "¿Cómo dormir mejor?",
+      "¿Cuántas horas debe dormir un adolescente?"
+    ];
+  }
+
+  else if (
+    p.includes("estrés") ||
+    p.includes("estres") ||
+    p.includes("ansiedad") ||
+    p.includes("mental")
+  ) {
+    respuesta = "❤️ La salud mental es fundamental para el bienestar. Hablar con personas de confianza, descansar y realizar actividades recreativas ayuda a cuidarla.";
+    sugerencias = [
+      "¿Cómo controlar el estrés?",
+      "¿Cómo cuidar mi salud mental?",
+      "¿Qué hacer cuando me siento triste?"
+    ];
+  }
+
+  else if (
+    p.includes("sexual") ||
+    p.includes("sexualidad")
+  ) {
+    respuesta = "🛡️ La salud sexual implica bienestar físico, emocional y social relacionado con la sexualidad. La información correcta ayuda a tomar decisiones responsables.";
+    sugerencias = [
+      "¿Qué es la salud sexual?",
+      "¿Cómo prevenir ITS?",
+      "¿Por qué es importante la educación sexual?"
+    ];
+  }
+
+  else if (
+    p.includes("anticonceptivo") ||
+    p.includes("condón") ||
+    p.includes("condon") ||
+    p.includes("embarazo")
+  ) {
+    respuesta = "💊 Los métodos anticonceptivos ayudan a prevenir embarazos. Algunos, como el condón, también ayudan a prevenir infecciones de transmisión sexual.";
+    sugerencias = [
+      "¿Qué métodos anticonceptivos existen?",
+      "¿Qué tan efectivo es el condón?",
+      "¿Cuál es el mejor método anticonceptivo?"
+    ];
+  }
+
+  else if (
+    p.includes("hospital") ||
+    p.includes("clínica") ||
+    p.includes("clinica") ||
+    p.includes("centro de salud") ||
+    p.includes("doctor")
+  ) {
+    respuesta = "🏥 Los centros de salud ofrecen atención médica, vacunación, prevención de enfermedades y orientación para mejorar la calidad de vida.";
+    sugerencias = [
+      "¿Qué servicios ofrece un centro de salud?",
+      "¿Cuándo debo acudir al médico?",
+      "¿Por qué son importantes las vacunas?"
+    ];
+  }
+
+  else if (
+    p.includes("vida plena") ||
+    p.includes("bienestar") ||
+    p.includes("felicidad") ||
+    p.includes("vida saludable")
+  ) {
+    respuesta = "🌟 Una vida plena se logra mediante hábitos saludables, ejercicio, buena alimentación, descanso adecuado y relaciones positivas.";
+    sugerencias = [
+      "¿Cómo tener una vida saludable?",
+      "¿Qué hábitos mejoran la calidad de vida?",
+      "¿Cómo alcanzar el bienestar?"
+    ];
+  }
+
+  else if (
+    p.includes("hola") ||
+    p.includes("buenos días") ||
+    p.includes("buenas tardes")
+  ) {
+    respuesta = `👋 ¡Hola! Soy tu asistente de salud.
+
+Temas disponibles:
+🍎 Alimentación saludable
+💰 Alimentación económica
+🏃 Actividad física
+😴 Sueño y descanso
+❤️ Salud mental
+🛡️ Salud sexual
+💊 Métodos anticonceptivos
+🏥 Centros de salud
+🌟 Vida plena y bienestar`;
+  }
+
+  else if (p.includes("gracias")) {
+    respuesta = "😊 ¡De nada! Estoy para ayudarte a aprender sobre salud y bienestar.";
+  }
+
+  else {
+    respuesta = `❓ No entendí tu pregunta.
+
+Prueba con:
+• Alimentación saludable
+• Actividad física
+• Salud mental
+• Salud sexual
+• Métodos anticonceptivos
+• Centros de salud
+• Vida plena`;
+  }
+
+  let htmlSugerencias = "";
+
+  if (sugerencias.length > 0) {
+    htmlSugerencias = `
+      <br><br>
+      <strong>💡 También puedes preguntar:</strong>
+      <ul>
+        ${sugerencias.map(s => `<li>${s}</li>`).join("")}
+      </ul>
+    `;
+  }
+
+  chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
+  chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}${htmlSugerencias}</p>`;
+
+  const voz = new SpeechSynthesisUtterance(respuesta);
+  voz.lang = "es-MX";
+  window.speechSynthesis.speak(voz);
+
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
   chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
   chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
 
