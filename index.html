@@ -453,7 +453,10 @@ const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 
 function responder(pregunta) {
-  const p = pregunta.toLowerCase();
+  const p = pregunta
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "");
 
   let respuesta = "";
   let sugerencias = [];
