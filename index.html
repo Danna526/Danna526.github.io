@@ -573,11 +573,12 @@ function responder(pregunta) {
   }
 
   else if (
-    p.includes("hola") ||
-    p.includes("buenos días") ||
-    p.includes("buenas tardes")
-  ) {
-    respuesta = `👋 ¡Hola! Soy tu asistente de salud y bienestar.
+  p.includes("hola") ||
+  p.includes("buenos días") ||
+  p.includes("buenas tardes") ||
+  p.includes("buenas noches")
+) {
+  respuesta = `👋 ¡Hola! Soy tu asistente de salud y bienestar.
 
 📚 Temas disponibles:
 
@@ -605,11 +606,21 @@ function responder(pregunta) {
 🩺 Hipertensión
 
 Escribe cualquier pregunta relacionada con estos temas.`;
+}
 
-  else if (p.includes("gracias")) {
-    respuesta = "😊 ¡De nada! Estoy para ayudarte a aprender sobre salud y bienestar.";
-  }
-
+else if (
+  p.includes("gracias") ||
+  p.includes("muchas gracias") ||
+  p.includes("te agradezco")
+) {
+  respuesta = "😊 ¡De nada! Me alegra poder ayudarte. Si tienes más preguntas sobre salud, alimentación, ejercicio, bienestar o cualquier otro tema disponible, estaré aquí para ayudarte.";
+  sugerencias = [
+    "¿Cómo tener una vida saludable?",
+    "¿Cuánta agua debo tomar al día?",
+    "¿Cómo cuidar mi salud mental?",
+    "¿Qué ejercicios puedo hacer en casa?"
+  ];
+}
   else {
     respuesta = `❓ No entendí tu pregunta.
 
@@ -644,20 +655,7 @@ Prueba con:
 
   chatbox.scrollTop = chatbox.scrollHeight;
 }
-  chatbox.innerHTML += `<p><strong>Tú:</strong> ${pregunta}</p>`;
-  chatbox.innerHTML += `<p><strong>Bot:</strong> ${respuesta}</p>`;
-
-  const voz = new SpeechSynthesisUtterance(respuesta);
-  window.speechSynthesis.speak(voz);
-}
-
-sendBtn.addEventListener("click", () => {
-  const pregunta = userInput.value.trim();
-  if (pregunta) {
-    responder(pregunta);
-    userInput.value = "";
-    chatbox.scrollTop = chatbox.scrollHeight;
-  }
+  
 });
 
 function mostrarImagen(event) {
