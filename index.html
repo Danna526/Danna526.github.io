@@ -58,7 +58,76 @@ h2{
 h3{
   color:#ff69a6;
 }
+/* PRESENTACIÓN */
 
+.presentacion{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    margin:20px auto;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.presentacion-texto{
+    flex:2;
+    min-width:300px;
+}
+
+.presentacion-texto h2{
+    color:#d85b8b;
+    margin-bottom:10px;
+}
+
+.presentacion-texto h3{
+    color:#c04f7d;
+    margin-bottom:20px;
+}
+
+.presentacion-texto ul{
+    padding-left:25px;
+}
+
+.presentacion-texto li{
+    margin-bottom:12px;
+    line-height:1.6;
+}
+
+.presentacion-logo{
+    flex:1;
+    min-width:250px;
+    text-align:center;
+}
+
+.presentacion-logo img{
+    width:100%;
+    max-width:320px;
+    height:auto;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .presentacion{
+        flex-direction:column;
+        text-align:left;
+    }
+
+    .presentacion-logo{
+        margin-top:20px;
+    }
+
+    .presentacion-logo img{
+        max-width:220px;
+    }
+}
 /* TEXTO */
 p{
   text-align:justify;
@@ -237,20 +306,21 @@ ul li{
         • Alan Eduardo Cárdenas Ramírez<br>
         • Aline Yamileth Jaco Reyes<br>
         • Diana Belén Jiménez Rojas<br>
-        • Dulce Itxel Dominguez Vargas
+        • Dulce Itxel Domínguez Vargas
       </li>
 
       <li><strong>Grupo:</strong> 601</li>
 
       <li><strong>Plantel:</strong> COBAEV 46 Córdoba II</li>
     </ul>
-</div>
-  <div style="flex: 1; text-align: center; min-width: 200px;">
-    <img src="C.png" alt="Logo Cobaev" style="max-width: 200px; border-radius: 10px;">
-  </div>
-</div>
+
   </div>
 
+  <div class="presentacion-logo">
+    <img src="C.png" alt="Logo COBAEV">
+  </div>
+
+</div>
 
 
 <nav>
